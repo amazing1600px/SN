@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -202,7 +202,7 @@
     /* SECTIONS */
     section {
       padding: 4.5rem 5%;
-      max-width: 1240px;
+      max-width: 1280px;
       margin: 0 auto;
     }
 
@@ -222,38 +222,36 @@
       font-size: 0.95rem;
     }
 
-    /* FILTER TABS */
-    .filter-bar {
-      display: flex;
-      justify-content: center;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
+    .subsection-title {
+      font-size: 1.35rem;
+      color: var(--naruto-gold);
+      margin: 2.5rem 0 1.25rem;
+      text-align: center;
+      letter-spacing: 0.5px;
     }
 
-    .filter-btn {
-      background: var(--bg-card);
-      color: var(--text-muted);
-      border: 1px solid var(--border-subtle);
-      padding: 0.45rem 1.1rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .filter-btn.active, .filter-btn:hover {
-      background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(249, 115, 22, 0.3));
-      color: #fff;
-      border-color: var(--naruto-orange);
+    .see-all-wrapper {
+      text-align: center;
+      margin-top: 2rem;
     }
 
     /* GRIDS & CARDS */
-    .grid {
+    .grid-4 {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 1.5rem;
+    }
+
+    .grid-merch {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-contrib {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1.1rem;
     }
 
     .card {
@@ -306,7 +304,7 @@
     .tag-orange { background: rgba(249, 115, 22, 0.18); color: #fdba74; }
 
     .card-title {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       font-weight: 700;
       margin-bottom: 0.3rem;
       color: #fff;
@@ -322,34 +320,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 0.5rem;
       padding-top: 0.8rem;
       border-top: 1px solid var(--border-subtle);
       margin-top: auto;
     }
 
-    .like-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      padding: 5px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-
-    .like-btn.liked {
-      background: rgba(244, 63, 94, 0.18);
-      border-color: #f43f5e;
-      color: #fda4af;
-    }
-
     /* FANFIC PREVIEW CARD */
     .fic-excerpt {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #cbd5e1;
       margin-bottom: 1rem;
       display: -webkit-box;
@@ -362,7 +341,7 @@
     .fic-stats {
       font-size: 0.78rem;
       color: var(--naruto-gold);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.75rem;
     }
 
     /* DIGITAL MERCH */
@@ -373,25 +352,46 @@
       background: #0c0e1a;
     }
 
-    /* CONTRIBUTOR */
-    .contrib-card {
+    /* MODS & CONTRIBUTORS */
+    .mod-card {
       text-align: center;
       padding: 1.75rem 1.25rem;
+      border-color: rgba(249, 115, 22, 0.25);
+    }
+
+    .contrib-card {
+      text-align: center;
+      padding: 1.25rem 1rem;
     }
 
     .avatar {
-      width: 72px;
-      height: 72px;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
-      margin: 0 auto 1rem;
+      margin: 0 auto 0.9rem;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       color: #fff;
       background: linear-gradient(135deg, var(--sasuke-purple), var(--naruto-orange));
       border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .avatar-sm {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: 0 auto 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      background: linear-gradient(135deg, #311042, #7c2d12);
+      border: 1px solid rgba(139, 92, 246, 0.45);
     }
 
     /* MINI GAMES */
@@ -408,6 +408,24 @@
       justify-content: center;
       margin-bottom: 2rem;
       flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(249, 115, 22, 0.3));
+      color: #fff;
+      border-color: var(--naruto-orange);
     }
 
     .game-panel {
@@ -564,7 +582,7 @@
       <li><a href="#fanart">Fanart</a></li>
       <li><a href="#fanfic">Fanfic</a></li>
       <li><a href="#merch">Digital Merch</a></li>
-      <li><a href="#contributors">Contributor</a></li>
+      <li><a href="#team">Mods & Contributors</a></li>
       <li><a href="#minigames">Mini Games</a></li>
     </ul>
   </nav>
@@ -577,97 +595,96 @@
     </div>
     <div class="eclipse-badge">✦ Fan Celebration Event 2026 ✦</div>
     <h1>Sun & Moon: Eclipse Fest</h1>
-    <p>Perayaan karya penggemar untuk ikatan abadi Uzumaki Naruto & Uchiha Sasuke. Jelajahi galeri ilustrasi kurasi, cuplikan fanfiksi, merchandise digital gratis, dan mini games seru.</p>
+    <p>A community celebration honoring the eternal bond between Uzumaki Naruto & Uchiha Sasuke. Explore curated illustrations, fanfiction previews, free digital merch, and interactive mini-games.</p>
     <div class="cta-group">
-      <a href="#fanart" class="btn btn-primary">Jelajahi Karya</a>
-      <a href="#minigames" class="btn btn-outline">Main Mini Games 🎮</a>
+      <a href="#fanart" class="btn btn-primary">Explore Works</a>
+      <a href="#minigames" class="btn btn-outline">Play Mini Games 🎮</a>
     </div>
   </header>
 
   <!-- FANART SECTION -->
   <section id="fanart">
     <div class="section-header">
-      <h2>Galeri Fanart</h2>
-      <p>Ilustrasi eksklusif yang dikurasi untuk perayaan SasuNaru Eclipse Fest. Klik gambar untuk memperbesar.</p>
+      <h2>Fanart Gallery</h2>
+      <p>Curated illustrations created for SasuNaru Eclipse Fest. Click any piece to view in full size.</p>
     </div>
-    <div class="filter-bar" id="artFilters">
-      <button class="filter-btn active" data-filter="all">Semua</button>
-      <button class="filter-btn" data-filter="canon">Canonverse</button>
-      <button class="filter-btn" data-filter="modern">Modern AU</button>
-      <button class="filter-btn" data-filter="chibi">Chibi</button>
+    <div class="grid-4" id="fanartGrid"></div>
+    <div class="see-all-wrapper">
+      <button class="btn btn-outline" id="toggleArtBtn" onclick="toggleShowAllArt()">See All (10)</button>
     </div>
-    <div class="grid" id="fanartGrid"></div>
   </section>
 
   <!-- FANFIC SECTION (PREVIEW MODE) -->
   <section id="fanfic">
     <div class="section-header">
-      <h2>Arsip Fanfic (Preview)</h2>
-      <p>Baca sinopsis & kutipan pembuka di sini, lalu lanjutkan membaca cerita lengkap di platform asli penulis.</p>
+      <h2>Fanfic Archive</h2>
+      <p>Read the synopsis and opening excerpt below, then continue reading the full story on the author's platform.</p>
     </div>
-    <div class="filter-bar" id="ficFilters">
-      <button class="filter-btn active" data-filter="all">Semua Genre</button>
-      <button class="filter-btn" data-filter="fluff">Fluff</button>
-      <button class="filter-btn" data-filter="angst">Angst</button>
-      <button class="filter-btn" data-filter="hurt-comfort">Hurt/Comfort</button>
+    <div class="grid-4" id="fanficGrid"></div>
+    <div class="see-all-wrapper">
+      <button class="btn btn-outline" id="toggleFicBtn" onclick="toggleShowAllFic()">See All (10)</button>
     </div>
-    <div class="grid" id="fanficGrid"></div>
   </section>
 
   <!-- DIGITAL MERCH SECTION -->
   <section id="merch">
     <div class="section-header">
-      <h2>Digital Merch Gratis</h2>
-      <p>Unduh wallpaper, matching icon, dan pembatas buku edisi spesial untuk digunakan secara pribadi.</p>
+      <h2>Free Digital Merch</h2>
+      <p>Download special-edition wallpapers, matching icons, and printable bookmarks for personal use.</p>
     </div>
-    <div class="grid" id="merchGrid"></div>
+    <div class="grid-merch" id="merchGrid"></div>
   </section>
 
-  <!-- CONTRIBUTOR SECTION -->
-  <section id="contributors">
+  <!-- MODS & CONTRIBUTORS SECTION -->
+  <section id="team">
     <div class="section-header">
-      <h2>Para Contributor</h2>
-      <p>Kreator dan panitia di balik terselenggaranya SasuNaru Eclipse Fest.</p>
+      <h2>Organizers & Contributors</h2>
+      <p>Meet the 4 event moderators and 20 talented creators who brought SasuNaru Eclipse Fest to life.</p>
     </div>
-    <div class="grid" id="contribGrid"></div>
+
+    <h3 class="subsection-title">Event Moderators (4)</h3>
+    <div class="grid-4" id="modGrid"></div>
+
+    <h3 class="subsection-title">Contributors (20)</h3>
+    <div class="grid-contrib" id="contribGrid"></div>
   </section>
 
   <!-- MINI GAMES SECTION -->
   <section id="minigames">
     <div class="section-header">
-      <h2>Zona Mini Games</h2>
-      <p>Uji pengetahuan dan refleksmu lewat tiga mini games bertema SasuNaru!</p>
+      <h2>Mini Games Zone</h2>
+      <p>Test your memory, trivia knowledge, and reflexes with three SasuNaru-themed mini-games!</p>
     </div>
 
     <div class="games-wrapper">
       <div class="game-tabs">
-        <button class="filter-btn active" onclick="switchGame('memory', this)">🃏 Memory Match</button>
-        <button class="filter-btn" onclick="switchGame('trivia', this)">❓ Kuis Trivia</button>
-        <button class="filter-btn" onclick="switchGame('catch', this)">🍜 Tangkap Ramen & Tomat</button>
+        <button class="tab-btn active" onclick="switchGame('memory', this)">🃏 Memory Match</button>
+        <button class="tab-btn" onclick="switchGame('trivia', this)">❓ SasuNaru Trivia</button>
+        <button class="tab-btn" onclick="switchGame('catch', this)">🍜 Catch Ramen & Tomatoes</button>
       </div>
 
       <!-- GAME 1: MEMORY -->
       <div id="game-memory" class="game-panel active">
         <h3>SasuNaru Memory Match</h3>
-        <p style="color:var(--text-muted); font-size:0.9rem;">Cocokkan pasangan simbol Matahari, Bulan, Ramen, Tomat, Sharingan, dan Rubah!</p>
-        <p style="margin-top:0.5rem;">Langkah: <strong id="memMoves">0</strong> | Pasangan: <strong id="memPairs">0/6</strong></p>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Match the pairs of Sun, Moon, Ramen, Tomato, Fox, and Lightning symbols!</p>
+        <p style="margin-top:0.5rem;">Moves: <strong id="memMoves">0</strong> | Pairs: <strong id="memPairs">0/6</strong></p>
         <div class="memory-grid" id="memoryGrid"></div>
-        <button class="btn btn-outline" onclick="initMemoryGame()">Acak Ulang Kartu</button>
+        <button class="btn btn-outline" onclick="initMemoryGame()">Shuffle Cards</button>
       </div>
 
       <!-- GAME 2: TRIVIA -->
       <div id="game-trivia" class="game-panel">
-        <h3>Kuis Seberapa Kenal SasuNaru</h3>
+        <h3>How Well Do You Know SasuNaru?</h3>
         <div class="quiz-box" id="quizContainer"></div>
       </div>
 
       <!-- GAME 3: CATCH -->
       <div id="game-catch" class="game-panel">
-        <h3>Tangkap Ramen & Tomat!</h3>
-        <p style="color:var(--text-muted); font-size:0.9rem;">Geser keranjang (Mouse / Sentuh layar / Panah Kiri-Kanan) untuk menangkap 🍜 & 🍅. Hindari ⚡!</p>
-        <p style="margin-top:0.5rem;">Skor: <strong id="catchScore">0</strong> | Nyawa: <strong id="catchLives">3</strong></p>
+        <h3>Catch Ramen & Tomatoes!</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Move the basket (Mouse / Touch / Left-Right Arrows) to catch 🍜 & 🍅. Avoid ⚡!</p>
+        <p style="margin-top:0.5rem;">Score: <strong id="catchScore">0</strong> | Lives: <strong id="catchLives">3</strong></p>
         <canvas id="catchCanvas" width="420" height="320"></canvas>
-        <button class="btn btn-primary" onclick="startCatchGame()">Mulai / Main Lagi</button>
+        <button class="btn btn-primary" onclick="startCatchGame()">Start / Play Again</button>
       </div>
     </div>
   </section>
@@ -681,117 +698,180 @@
   </div>
 
   <footer>
-    <p>SasuNaru Eclipse Fest 2026 — Dibuat oleh penggemar untuk penggemar. Karakter Naruto & Sasuke milik Masashi Kishimoto.</p>
+    <p>SasuNaru Eclipse Fest 2026 — Made by fans, for fans. Naruto & Sasuke belong to Masashi Kishimoto.</p>
   </footer>
 
   <script>
     /* =========================================================================
-       === AREA ADMIN: KELOLA DATA KARYA DI SINI (EDIT BAGIAN INI SAJA) ===
+       === ADMIN AREA: MANAGE EVENT ENTRIES HERE (EDIT THIS SECTION ONLY) ===
        ========================================================================= */
 
-    // 1. DATA FANART
-    // Upload gambar ke folder "images/" di GitHub, lalu tulis path-nya di "image"
+    // 1. FANART DATA (10 Entries — First 4 shown by default, rest under "See All")
+    // Upload images to "images/" folder on GitHub and update the "image" path
     const FANARTS = [
-      {
-        id: "art-1",
-        title: "Valley of the End: Under the Eclipse",
-        artist: "@moonlight_ink",
-        category: "canon",
-        image: "images/fanart1.jpg", // Ganti dengan nama file yang kamu upload ke folder images/
-        likes: 42
-      },
-      {
-        id: "art-2",
-        title: "Late Night Ramen & Rooftop",
-        artist: "@sunbeam_draws",
-        category: "modern",
-        image: "images/fanart2.jpg",
-        likes: 38
-      },
-      {
-        id: "art-3",
-        title: "Chibi Sun & Moon Plushies",
-        artist: "@konoha_doodles",
-        category: "chibi",
-        image: "images/fanart3.jpg",
-        likes: 55
-      }
+      { title: "Valley of the End: Under the Eclipse", artist: "@moonlight_ink", genre: "Canonverse", rating: "G", image: "images/fanart1.jpg" },
+      { title: "Late Night Ramen & Rooftop", artist: "@sunbeam_draws", genre: "Modern AU", rating: "G", image: "images/fanart2.jpg" },
+      { title: "Chibi Sun & Moon Plushies", artist: "@konoha_doodles", genre: "Chibi", rating: "G", image: "images/fanart3.jpg" },
+      { title: "Red Thread of Destiny", artist: "@scarlet_brush", genre: "Fantasy AU", rating: "T", image: "images/fanart4.jpg" },
+      { title: "Rainy Afternoon in Konoha", artist: "@mist_sketch", genre: "Canonverse", rating: "G", image: "images/fanart5.jpg" },
+      { title: "Coffee Shop & Raincoats", artist: "@latte_art_sn", genre: "Modern AU", rating: "G", image: "images/fanart6.jpg" },
+      { title: "Two Halves of the Chakra", artist: "@yin_yang_studio", genre: "Canonverse", rating: "T", image: "images/fanart7.jpg" },
+      { title: "Stargazing After the Mission", artist: "@astral_pen", genre: "Hurt/Comfort", rating: "G", image: "images/fanart8.jpg" },
+      { title: "Festival Lanterns & Dango", artist: "@amber_glow", genre: "Fluff", rating: "G", image: "images/fanart9.jpg" },
+      { title: "Homecoming at Dawn", artist: "@horizon_line", genre: "Canonverse", rating: "T", image: "images/fanart10.jpg" }
     ];
 
-    // 2. DATA FANFIC (MODE PREVIEW + LINK EKSTERNAL KE AO3 / WATTPAD)
+    // 2. FANFIC DATA (10 Entries — First 4 shown by default, rest under "See All")
     const FANFICS = [
       {
-        id: "fic-1",
         title: "Where the Sun Meets the Shadow",
         author: "@uchiha_scribe",
-        genre: "angst",
+        genre: "Angst",
         rating: "T",
-        words: "6.200 kata",
-        preview: "Hujan turun tanpa henti di Lembah Akhir malam itu. Sasuke menatap langit yang perlahan menggelap saat gerhana mulai menutupi cahaya bulan.\n\n\"Kau selalu datang terlambat, Dobe,\" gumamnya pelan, meski sudut bibirnya terangkat tipis saat merasakan chakra hangat yang sangat ia kenal mendekat dari balik kabut.",
+        words: "6,200 words",
+        preview: "Rain poured endlessly over the Valley of the End that night. Sasuke gazed up at the darkening sky as the eclipse slowly swallowed the moonlight.\n\n\"You're always late, Dobe,\" he murmured quietly, though the corner of his mouth lifted as he felt a familiar, warm chakra approaching through the mist.",
         platform: "AO3",
-        link: "https://archiveofourown.org/" // Ganti dengan link cerita lengkap
+        link: "https://archiveofourown.org/"
       },
       {
-        id: "fic-2",
         title: "Two Bowls of Miso & One Umbrella",
         author: "@uzumaki_tales",
-        genre: "fluff",
+        genre: "Fluff",
         rating: "G",
-        words: "2.800 kata",
-        preview: "Apartemen kecil Naruto di pusat kota Tokyo selalu berantakan setiap akhir pekan, kecuali di hari Minggu pagi ketika Sasuke datang membawa sekantong tomat segar dan bahan sarapan.\n\n\"Jangan taruh jaket basahmu di atas sofa lagi, Naruto,\" tegur Sasuke sambil menyodorkan handuk kering.",
+        words: "2,800 words",
+        preview: "Naruto's small downtown apartment was always chaotic on weekends—except on Sunday mornings when Sasuke showed up carrying a bag of fresh tomatoes and breakfast groceries.\n\n\"Stop leaving your wet jacket on the sofa, Naruto,\" Sasuke sighed, handing over a dry towel.",
         platform: "Wattpad",
         link: "https://www.wattpad.com/"
       },
       {
-        id: "fic-3",
         title: "After the Storm Clears",
         author: "@eclipse_quill",
-        genre: "hurt-comfort",
+        genre: "Hurt/Comfort",
         rating: "T",
-        words: "4.500 kata",
-        preview: "Misi pengintaian di perbatasan Negara Api menyisakan luka bakar di bahu kiri Sasuke. Naruto menolak beranjak dari sisi ranjang klinik sepanjang malam, memastikan sahabat sekaligus belahan jiwanya itu benar-benar pulih.",
+        words: "4,500 words",
+        preview: "A reconnaissance mission along the Land of Fire border left a lingering burn across Sasuke's left shoulder. Naruto refused to leave the clinic bedside all night, making sure his best friend and soulmate truly recovered.",
+        platform: "AO3",
+        link: "https://archiveofourown.org/"
+      },
+      {
+        title: "A Thousand Lanterns Between Us",
+        author: "@crimson_inkwell",
+        genre: "Romance",
+        rating: "T",
+        words: "5,100 words",
+        preview: "Every summer festival in Konoha, Naruto bought two masks—a fox and a crow—hoping this would finally be the year Sasuke returned in time to watch the fireworks beside him.",
+        platform: "AO3",
+        link: "https://archiveofourown.org/"
+      },
+      {
+        title: "Static on the Radio",
+        author: "@midnight_proser",
+        genre: "Modern AU",
+        rating: "G",
+        words: "3,400 words",
+        preview: "Working the graveyard shift at a 24-hour convenience store had only one perk: the quiet regular with raven hair who always bought tomato juice at 2:15 AM sharp.",
+        platform: "AO3",
+        link: "https://archiveofourown.org/"
+      },
+      {
+        title: "Chronicles of the Seventh & His Shadow",
+        author: "@konoha_archives",
+        genre: "Canonverse",
+        rating: "T",
+        words: "8,900 words",
+        preview: "Long after the war ended, the Hokage's office still kept a spare chair by the window—reserved exclusively for the man who guarded the village from the shadows.",
+        platform: "AO3",
+        link: "https://archiveofourown.org/"
+      },
+      {
+        title: "Paper Cranes & Unsent Letters",
+        author: "@solstice_words",
+        genre: "Angst/Fluff",
+        rating: "G",
+        words: "3,900 words",
+        preview: "Tucked inside Sasuke's travel cloak were seventeen folded notes he never meant to send—until a sudden gust of wind scattered them across Naruto's desk.",
+        platform: "Wattpad",
+        link: "https://www.wattpad.com/"
+      },
+      {
+        title: "Starlight Over Naka Shrine",
+        author: "@lunar_sonnet",
+        genre: "Time Travel",
+        rating: "T",
+        words: "7,400 words",
+        preview: "Waking up as twelve-year-old genin with all their memories intact meant one thing: neither of them was going to let history repeat itself.",
+        platform: "AO3",
+        link: "https://archiveofourown.org/"
+      },
+      {
+        title: "Warm Hands in December",
+        author: "@amber_chapters",
+        genre: "Fluff",
+        rating: "G",
+        words: "2,200 words",
+        preview: "Snow covered every rooftop in Konoha, and Sasuke had forgotten his gloves again. Fortunately, Naruto's coat pockets were plenty big enough for two.",
+        platform: "AO3",
+        link: "https://archiveofourown.org/"
+      },
+      {
+        title: "Orbiting the Same Sun",
+        author: "@celestial_fic",
+        genre: "Sci-Fi AU",
+        rating: "M",
+        words: "9,600 words",
+        preview: "Assigned as co-pilots on a deep-space relay station, Commander Uzumaki and Captain Uchiha quickly discover that silence in zero gravity says more than words ever could.",
         platform: "AO3",
         link: "https://archiveofourown.org/"
       }
     ];
 
-    // 3. DATA DIGITAL MERCH
-    // Upload file resolusi tinggi ke folder "images/" agar bisa langsung di-download peserta
+    // 3. DIGITAL MERCH DATA
     const MERCH = [
-      {
-        title: "Eclipse Dual Wallpaper (HP & Desktop)",
-        creator: "@moonlight_ink",
-        type: "Wallpaper Pack",
-        file: "images/merch-wallpaper.png"
-      },
-      {
-        title: "SasuNaru Matching Icons (Sun & Moon)",
-        creator: "@konoha_doodles",
-        type: "Icon Set",
-        file: "images/merch-icons.png"
-      },
-      {
-        title: "Printable Bookmark: Red Thread",
-        creator: "@sunbeam_draws",
-        type: "Printable PDF/PNG",
-        file: "images/merch-bookmark.png"
-      }
+      { title: "Eclipse Dual Wallpaper (Phone & Desktop)", creator: "@moonlight_ink", type: "Wallpaper Pack", file: "images/merch-wallpaper.png" },
+      { title: "SasuNaru Matching Icons (Sun & Moon)", creator: "@konoha_doodles", type: "Icon Set", file: "images/merch-icons.png" },
+      { title: "Printable Bookmark: Red Thread", creator: "@sunbeam_draws", type: "Printable PNG", file: "images/merch-bookmark.png" }
     ];
 
-    // 4. DATA CONTRIBUTOR
+    // 4. EVENT MODERATORS (4 Organizers)
+    const MODS = [
+      { name: "Moonlight Ink", handle: "@moonlight_ink", role: "Head Organizer & Art Mod", link: "https://twitter.com" },
+      { name: "Uchiha Scribe", handle: "@uchiha_scribe", role: "Writing & Fic Mod", link: "https://archiveofourown.org" },
+      { name: "Sunbeam Draws", handle: "@sunbeam_draws", role: "Graphics & Merch Mod", link: "https://instagram.com" },
+      { name: "Konoha Doodles", handle: "@konoha_doodles", role: "Social Media & Event Host", link: "https://twitter.com" }
+    ];
+
+    // 5. CONTRIBUTORS (20 Creators)
     const CONTRIBUTORS = [
-      { name: "Moonlight Ink", handle: "@moonlight_ink", role: "Lead Illustrator & Admin", link: "https://twitter.com" },
-      { name: "Uchiha Scribe", handle: "@uchiha_scribe", role: "Head Writer & Fic Mod", link: "https://archiveofourown.org" },
-      { name: "Sunbeam Draws", handle: "@sunbeam_draws", role: "Merch Designer", link: "https://instagram.com" },
-      { name: "Konoha Doodles", handle: "@konoha_doodles", role: "Chibi Artist & Event Host", link: "https://twitter.com" }
+      { name: "Scarlet Brush", handle: "@scarlet_brush", role: "Artist", link: "https://twitter.com" },
+      { name: "Mist Sketch", handle: "@mist_sketch", role: "Artist", link: "https://twitter.com" },
+      { name: "Latte Art SN", handle: "@latte_art_sn", role: "Artist", link: "https://instagram.com" },
+      { name: "Yin Yang Studio", handle: "@yin_yang_studio", role: "Artist", link: "https://twitter.com" },
+      { name: "Astral Pen", handle: "@astral_pen", role: "Artist", link: "https://twitter.com" },
+      { name: "Amber Glow", handle: "@amber_glow", role: "Artist", link: "https://instagram.com" },
+      { name: "Horizon Line", handle: "@horizon_line", role: "Artist", link: "https://twitter.com" },
+      { name: "Kitsune Palette", handle: "@kitsune_palette", role: "Artist", link: "https://twitter.com" },
+      { name: "Crow Feather", handle: "@crow_feather", role: "Artist", link: "https://instagram.com" },
+      { name: "Dusk & Dawn", handle: "@dusk_and_dawn", role: "Artist", link: "https://twitter.com" },
+      { name: "Uzumaki Tales", handle: "@uzumaki_tales", role: "Writer", link: "https://archiveofourown.org" },
+      { name: "Eclipse Quill", handle: "@eclipse_quill", role: "Writer", link: "https://archiveofourown.org" },
+      { name: "Crimson Inkwell", handle: "@crimson_inkwell", role: "Writer", link: "https://archiveofourown.org" },
+      { name: "Midnight Proser", handle: "@midnight_proser", role: "Writer", link: "https://archiveofourown.org" },
+      { name: "Konoha Archives", handle: "@konoha_archives", role: "Writer", link: "https://archiveofourown.org" },
+      { name: "Solstice Words", handle: "@solstice_words", role: "Writer", link: "https://wattpad.com" },
+      { name: "Lunar Sonnet", handle: "@lunar_sonnet", role: "Writer", link: "https://archiveofourown.org" },
+      { name: "Amber Chapters", handle: "@amber_chapters", role: "Writer", link: "https://archiveofourown.org" },
+      { name: "Celestial Fic", handle: "@celestial_fic", role: "Writer", link: "https://archiveofourown.org" },
+      { name: "Whirlpool Verse", handle: "@whirlpool_verse", role: "Writer", link: "https://archiveofourown.org" }
     ];
 
     /* =========================================================================
-       === AKHIR AREA ADMIN (KODE SISTEM DI BAWAH TIDAK PERLU DIUBAH) ===
+       === END OF ADMIN AREA ===
        ========================================================================= */
 
-    // Fallback SVG otomatis jika file di folder images/ belum di-upload admin
-    function getFallbackSVG(label, theme = "dual") {
+    let showAllArt = false;
+    let showAllFic = false;
+
+    function getFallbackSVG(label) {
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
         <defs>
           <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -804,39 +884,41 @@
         <circle cx="255" cy="195" r="55" fill="#8b5cf6" opacity="0.85"/>
         <circle cx="345" cy="195" r="55" fill="#f97316" opacity="0.85"/>
         <text x="300" y="305" fill="#f8fafc" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle">${label}</text>
-        <text x="300" y="335" fill="#cbd5e1" font-family="sans-serif" font-size="13" text-anchor="middle">(Upload gambar ke folder images/ di GitHub)</text>
+        <text x="300" y="335" fill="#cbd5e1" font-family="sans-serif" font-size="13" text-anchor="middle">(Upload image to images/ folder on GitHub)</text>
       </svg>`;
       return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
     }
 
-    // RENDER FANART
-    function renderFanarts(filter = "all") {
+    // RENDER FANART (4 by default, 10 when expanded)
+    function renderFanarts() {
       const grid = document.getElementById("fanartGrid");
-      const likedIds = JSON.parse(localStorage.getItem("sn_likes") || "[]");
+      const btn = document.getElementById("toggleArtBtn");
       grid.innerHTML = "";
 
-      FANARTS.filter(item => filter === "all" || item.category === filter).forEach(art => {
-        const isLiked = likedIds.includes(art.id);
-        const count = art.likes + (isLiked ? 1 : 0);
+      const visibleArts = showAllArt ? FANARTS : FANARTS.slice(0, 4);
+      btn.textContent = showAllArt ? "Show Less" : `See All (${FANARTS.length})`;
+
+      visibleArts.forEach(art => {
         const fallback = getFallbackSVG(art.title);
+        const safeTitle = art.title.replace(/'/g, "\\'");
 
         const card = document.createElement("div");
         card.className = "card";
         card.innerHTML = `
           <img src="${art.image}" alt="${art.title}" class="art-thumb"
                onerror="this.onerror=null; this.src='${fallback}';"
-               onclick="openArtModal('${art.title.replace(/'/g, "\\'")}', '${art.artist}', '${art.image}', '${fallback}')">
+               onclick="openArtModal('${safeTitle}', '${art.artist}', '${art.genre}', '${art.rating}', '${art.image}', '${fallback}')">
           <div class="card-body">
             <div>
-              <span class="tag tag-purple">${art.category}</span>
+              <span class="tag tag-purple">${art.genre} • Rating ${art.rating}</span>
               <h3 class="card-title">${art.title}</h3>
-              <p class="card-meta">Oleh ${art.artist}</p>
+              <p class="card-meta">By ${art.artist}</p>
             </div>
             <div class="card-footer">
-              <button class="like-btn ${isLiked ? 'liked' : ''}" onclick="toggleLike('${art.id}', '${filter}')">
-                ♥ <span>${count}</span>
+              <button class="btn btn-outline" style="width:100%; justify-content:center; padding:0.45rem;"
+                onclick="openArtModal('${safeTitle}', '${art.artist}', '${art.genre}', '${art.rating}', '${art.image}', '${fallback}')">
+                View Full Size
               </button>
-              <button class="filter-btn" onclick="openArtModal('${art.title.replace(/'/g, "\\'")}', '${art.artist}', '${art.image}', '${fallback}')">Perbesar</button>
             </div>
           </div>
         `;
@@ -844,23 +926,21 @@
       });
     }
 
-    function toggleLike(id, currentFilter) {
-      let likedIds = JSON.parse(localStorage.getItem("sn_likes") || "[]");
-      if (likedIds.includes(id)) {
-        likedIds = likedIds.filter(item => item !== id);
-      } else {
-        likedIds.push(id);
-      }
-      localStorage.setItem("sn_likes", JSON.stringify(likedIds));
-      renderFanarts(currentFilter);
+    function toggleShowAllArt() {
+      showAllArt = !showAllArt;
+      renderFanarts();
     }
 
-    // RENDER FANFIC (PREVIEW ONLY)
-    function renderFanfics(filter = "all") {
+    // RENDER FANFIC (4 by default, 10 when expanded)
+    function renderFanfics() {
       const grid = document.getElementById("fanficGrid");
+      const btn = document.getElementById("toggleFicBtn");
       grid.innerHTML = "";
 
-      FANFICS.filter(fic => filter === "all" || fic.genre === filter).forEach((fic, index) => {
+      const visibleFics = showAllFic ? FANFICS : FANFICS.slice(0, 4);
+      btn.textContent = showAllFic ? "Show Less" : `See All (${FANFICS.length})`;
+
+      visibleFics.forEach((fic, index) => {
         const card = document.createElement("div");
         card.className = "card";
         card.innerHTML = `
@@ -868,18 +948,23 @@
             <div>
               <span class="tag tag-orange">${fic.genre} • Rating ${fic.rating}</span>
               <h3 class="card-title">${fic.title}</h3>
-              <p class="card-meta">Oleh ${fic.author}</p>
-              <p class="fic-stats">📖 ${fic.words} • Tersedia di ${fic.platform}</p>
+              <p class="card-meta">By ${fic.author}</p>
+              <p class="fic-stats">📖 ${fic.words} • Read on ${fic.platform}</p>
               <p class="fic-excerpt">"${fic.preview}"</p>
             </div>
             <div class="card-footer">
-              <button class="btn btn-outline" style="padding: 0.45rem 0.9rem; font-size:0.85rem;" onclick="openFicModal(${index})">Baca Preview</button>
-              <a href="${fic.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.45rem 0.9rem; font-size:0.85rem;">${fic.platform} ↗</a>
+              <button class="btn btn-outline" style="padding: 0.45rem 0.85rem; font-size:0.84rem;" onclick="openFicModal(${index})">Preview</button>
+              <a href="${fic.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.45rem 0.85rem; font-size:0.84rem;">${fic.platform} ↗</a>
             </div>
           </div>
         `;
         grid.appendChild(card);
       });
+    }
+
+    function toggleShowAllFic() {
+      showAllFic = !showAllFic;
+      renderFanfics();
     }
 
     // RENDER MERCH
@@ -896,10 +981,10 @@
             <div>
               <span class="tag tag-purple">${item.type}</span>
               <h3 class="card-title">${item.title}</h3>
-              <p class="card-meta">Desain oleh ${item.creator}</p>
+              <p class="card-meta">Designed by ${item.creator}</p>
             </div>
             <div class="card-footer">
-              <a href="${item.file}" download class="btn btn-primary" style="width:100%; justify-content:center;">⬇ Unduh Gratis</a>
+              <a href="${item.file}" download class="btn btn-primary" style="width:100%; justify-content:center;">⬇ Free Download</a>
             </div>
           </div>
         `;
@@ -907,31 +992,47 @@
       });
     }
 
-    // RENDER CONTRIBUTORS
-    function renderContributors() {
-      const grid = document.getElementById("contribGrid");
+    // RENDER MODS (4) & CONTRIBUTORS (20)
+    function renderTeam() {
+      const modGrid = document.getElementById("modGrid");
+      MODS.forEach(m => {
+        const initials = m.name.split(" ").map(n => n[0]).join("").slice(0, 2).toUpperCase();
+        const card = document.createElement("div");
+        card.className = "card mod-card";
+        card.innerHTML = `
+          <div class="avatar">${initials}</div>
+          <h3 class="card-title">${m.name}</h3>
+          <p style="color:var(--naruto-gold); font-size:0.84rem; font-weight:600; margin-bottom:0.25rem;">${m.role}</p>
+          <p class="card-meta">${m.handle}</p>
+          <a href="${m.link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:0.5rem; justify-content:center; padding:0.5rem 1rem; font-size:0.85rem;">Profile ↗</a>
+        `;
+        modGrid.appendChild(card);
+      });
+
+      const contribGrid = document.getElementById("contribGrid");
       CONTRIBUTORS.forEach(c => {
         const initials = c.name.split(" ").map(n => n[0]).join("").slice(0, 2).toUpperCase();
         const card = document.createElement("div");
         card.className = "card contrib-card";
         card.innerHTML = `
-          <div class="avatar">${initials}</div>
-          <h3 class="card-title">${c.name}</h3>
-          <p style="color:var(--naruto-gold); font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">${c.role}</p>
-          <p class="card-meta">${c.handle}</p>
-          <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:0.5rem; justify-content:center;">Kunjungi Profil ↗</a>
+          <div class="avatar-sm">${initials}</div>
+          <h3 class="card-title" style="font-size:1rem;">${c.name}</h3>
+          <p style="color:#c4b5fd; font-size:0.78rem; font-weight:600; margin-bottom:0.2rem;">${c.role}</p>
+          <p class="card-meta" style="font-size:0.8rem; margin-bottom:0.6rem;">${c.handle}</p>
+          <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="justify-content:center; padding:0.35rem 0.75rem; font-size:0.78rem;">Socials ↗</a>
         `;
-        grid.appendChild(card);
+        contribGrid.appendChild(card);
       });
     }
 
     // MODALS
-    function openArtModal(title, artist, imgSrc, fallback) {
+    function openArtModal(title, artist, genre, rating, imgSrc, fallback) {
       const body = document.getElementById("modalBody");
       body.innerHTML = `
         <img src="${imgSrc}" alt="${title}" class="modal-img" onerror="this.onerror=null; this.src='${fallback}';">
-        <h3 class="card-title" style="font-size:1.4rem;">${title}</h3>
-        <p class="card-meta">Ilustrasi oleh <strong>${artist}</strong></p>
+        <span class="tag tag-purple">${genre} • Rating ${rating}</span>
+        <h3 class="card-title" style="font-size:1.4rem; margin-top:0.3rem;">${title}</h3>
+        <p class="card-meta">Illustrated by <strong>${artist}</strong></p>
       `;
       document.getElementById("previewModal").classList.add("open");
     }
@@ -942,11 +1043,11 @@
       body.innerHTML = `
         <span class="tag tag-orange">${fic.genre} • Rating ${fic.rating} • ${fic.words}</span>
         <h3 class="card-title" style="font-size:1.5rem; margin-top:0.4rem;">${fic.title}</h3>
-        <p class="card-meta">Ditulis oleh <strong>${fic.author}</strong></p>
+        <p class="card-meta">Written by <strong>${fic.author}</strong></p>
         <div class="preview-box">${fic.preview}</div>
-        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.2rem;">Ingin membaca kelanjutan ceritanya? Klik tombol di bawah untuk menuju halaman resmi karya ini.</p>
+        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.2rem;">Want to read the rest of this story? Click below to visit the official work page.</p>
         <a href="${fic.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%; justify-content:center;">
-          Baca Selengkapnya di ${fic.platform} ↗
+          Read Full Story on ${fic.platform} ↗
         </a>
       `;
       document.getElementById("previewModal").classList.add("open");
@@ -960,26 +1061,9 @@
       document.getElementById("previewModal").classList.remove("open");
     }
 
-    // FILTER BUTTON HANDLERS
-    document.querySelectorAll("#artFilters .filter-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll("#artFilters .filter-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        renderFanarts(btn.dataset.filter);
-      });
-    });
-
-    document.querySelectorAll("#ficFilters .filter-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll("#ficFilters .filter-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        renderFanfics(btn.dataset.filter);
-      });
-    });
-
     // GAME SWITCHER
     function switchGame(gameName, btn) {
-      document.querySelectorAll(".game-tabs .filter-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".game-tabs .tab-btn").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       document.querySelectorAll(".game-panel").forEach(p => p.classList.remove("active"));
       document.getElementById("game-" + gameName).classList.add("active");
@@ -1045,18 +1129,18 @@
     // === MINI GAME 2: TRIVIA ===
     const questions = [
       {
-        q: "Simbol apa yang diberikan Hagoromo Otsutsuki di telapak tangan Naruto dan Sasuke?",
-        opts: ["Api dan Angin", "Matahari (Yang) dan Bulan Sabit (Yin)", "Naga dan Harimau"],
+        q: "What symbols did Hagoromo Otsutsuki place on Naruto and Sasuke's palms?",
+        opts: ["Fire and Wind", "Sun (Yang) and Crescent Moon (Yin)", "Dragon and Tiger"],
         ans: 1
       },
       {
-        q: "Apa makanan favorit Sasuke dan Naruto yang paling ikonik?",
-        opts: ["Onigiri & Dango", "Tomat & Ramen Ichiraku", "Sushi & Kari"],
+        q: "What are Sasuke and Naruto's most iconic favorite foods?",
+        opts: ["Onigiri & Dango", "Tomatoes & Ichiraku Ramen", "Sushi & Curry"],
         ans: 1
       },
       {
-        q: "Di lokasi ikonik mana pertarungan penutup Naruto dan Sasuke terjadi?",
-        opts: ["Lembah Akhir (Valley of the End)", "Jembatan Kannabi", "Atap Rumah Sakit Konoha"],
+        q: "Where did Naruto and Sasuke's iconic final battle take place?",
+        opts: ["Valley of the End", "Kannabi Bridge", "Konoha Hospital Rooftop"],
         ans: 0
       }
     ];
@@ -1066,15 +1150,15 @@
       const box = document.getElementById("quizContainer");
       if (qIdx >= questions.length) {
         box.innerHTML = `
-          <h4 style="font-size:1.3rem; margin:1rem 0;">Kuis Selesai! 🎉</h4>
-          <p>Skor kamu: <strong>${qScore} dari ${questions.length}</strong></p>
-          <button class="btn btn-primary" style="margin-top:1rem;" onclick="resetQuiz()">Ulangi Kuis</button>
+          <h4 style="font-size:1.3rem; margin:1rem 0;">Quiz Complete! 🎉</h4>
+          <p>Your score: <strong>${qScore} out of ${questions.length}</strong></p>
+          <button class="btn btn-primary" style="margin-top:1rem;" onclick="resetQuiz()">Play Again</button>
         `;
         return;
       }
       const curr = questions[qIdx];
       box.innerHTML = `
-        <p style="color:var(--naruto-gold); font-size:0.85rem; margin-bottom:0.5rem;">Pertanyaan ${qIdx + 1} / ${questions.length}</p>
+        <p style="color:var(--naruto-gold); font-size:0.85rem; margin-bottom:0.5rem;">Question ${qIdx + 1} / ${questions.length}</p>
         <h4 style="font-size:1.1rem;">${curr.q}</h4>
         <div class="quiz-options">
           ${curr.opts.map((opt, i) => `<button class="quiz-opt" onclick="answerQuiz(${i})">${opt}</button>`).join("")}
@@ -1094,7 +1178,7 @@
       renderQuiz();
     }
 
-    // === MINI GAME 3: CATCH RAMEN & TOMATO ===
+    // === MINI GAME 3: CATCH RAMEN & TOMATOES ===
     const canvas = document.getElementById("catchCanvas");
     const ctx = canvas.getContext("2d");
     let playerX = 180, catchScore = 0, catchLives = 3, items = [], catchRunning = false, animId;
@@ -1130,17 +1214,14 @@
       if (!catchRunning) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Batasi posisi keranjang
       playerX = Math.max(0, Math.min(canvas.width - 60, playerX));
 
-      // Gambar Keranjang
       ctx.fillStyle = "#f97316";
       ctx.fillRect(playerX, canvas.height - 28, 60, 18);
       ctx.font = "14px sans-serif";
       ctx.fillStyle = "#fff";
       ctx.fillText("☀️🌙", playerX + 12, canvas.height - 14);
 
-      // Spawn item jatuh
       if (Math.random() < 0.035) {
         const pool = ["🍜", "🍅", "🍜", "🍅", "⚡"];
         items.push({
@@ -1157,7 +1238,6 @@
         it.y += it.speed;
         ctx.fillText(it.type, it.x, it.y);
 
-        // Cek tertangkap
         if (it.y > canvas.height - 34 && it.x > playerX - 15 && it.x < playerX + 55) {
           if (it.type === "⚡") {
             catchLives--;
@@ -1173,7 +1253,7 @@
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = "#fbbf24";
             ctx.font = "bold 20px sans-serif";
-            ctx.fillText("Game Over! Skor Akhir: " + catchScore, 85, 160);
+            ctx.fillText("Game Over! Final Score: " + catchScore, 80, 160);
             return;
           }
         } else if (it.y > canvas.height) {
@@ -1188,7 +1268,7 @@
     renderFanarts();
     renderFanfics();
     renderMerch();
-    renderContributors();
+    renderTeam();
     initMemoryGame();
     renderQuiz();
   </script>
