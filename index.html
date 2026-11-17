@@ -1,1720 +1,1196 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SasuNaru Eclipse Fest 2026 — Sun & Moon Fan Event</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Cinzel Decorative untuk judul epik & Plus Jakarta Sans untuk keterbacaan modern -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome untuk Ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        display: ['"Cinzel Decorative"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        sasuke: {
-                            dark: '#090914',
-                            deep: '#121329',
-                            indigo: '#2e2b6b',
-                            purple: '#7c3aed',
-                            electric: '#38bdf8'
-                        },
-                        naruto: {
-                            gold: '#fbbf24',
-                            orange: '#f97316',
-                            amber: '#d97706',
-                            crimson: '#ea580c'
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'spin-slow': 'spin 20s linear infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-12px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SasuNaru Eclipse Fest 2026 | Sun & Moon Fan Event</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #080912;
+      --bg-card: #121526;
+      --bg-card-hover: #181c33;
+      --sasuke-purple: #8b5cf6;
+      --sasuke-blue: #3b82f6;
+      --naruto-orange: #f97316;
+      --naruto-gold: #fbbf24;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+    }
 
-    <style>
-        /* Kustomisasi Scrollbar & Efek Khusus */
-        body {
-            background-color: #070710;
-            color: #f8fafc;
-            overflow-x: hidden;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Latar Belakang Gradien Gerhana (Matahari & Bulan) */
-        .eclipse-bg {
-            background: 
-                radial-gradient(circle at 18% 22%, rgba(124, 58, 237, 0.25) 0%, transparent 45%),
-                radial-gradient(circle at 82% 28%, rgba(249, 115, 22, 0.22) 0%, transparent 45%),
-                radial-gradient(circle at 50% 80%, rgba(30, 27, 75, 0.4) 0%, transparent 60%),
-                #070710;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        /* Efek Kaca (Glassmorphism) */
-        .glass-card {
-            background: rgba(18, 19, 41, 0.65);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(139, 92, 246, 0.14) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(249, 115, 22, 0.14) 0%, transparent 40%);
+    }
 
-        .glass-card-hover {
-            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .glass-card-hover:hover {
-            transform: translateY(-6px);
-            border-color: rgba(251, 191, 36, 0.45);
-            box-shadow: 0 15px 35px -10px rgba(124, 58, 237, 0.35), 0 10px 25px -10px rgba(249, 115, 22, 0.3);
-        }
+    h1, h2, h3, .brand-font {
+      font-family: 'Cinzel', serif;
+    }
 
-        /* Teks Gradien SasuNaru */
-        .text-sasunaru {
-            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 45%, #f97316 65%, #fbbf24 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 9, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.9rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-        /* Efek Balik Kartu Memory Game */
-        .perspective-1000 {
-            perspective: 1000px;
-        }
-        .transform-style-3d {
-            transform-style: preserve-3d;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .rotate-y-180 {
-            transform: rotateY(180deg);
-        }
-        .backface-hidden {
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
+    .logo {
+      font-weight: 800;
+      font-size: 1.25rem;
+      background: linear-gradient(90deg, var(--sasuke-purple), var(--naruto-orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
 
-        /* Custom Canvas Game */
-        #arcadeCanvas {
-            touch-action: none;
-            border-radius: 1rem;
-        }
-    </style>
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--naruto-gold);
+    }
+
+    /* HEADER / HERO */
+    header {
+      text-align: center;
+      padding: 5rem 5% 4rem;
+      position: relative;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .eclipse-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--naruto-gold);
+      margin-bottom: 1.2rem;
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #c4b5fd 0%, #8b5cf6 35%, #f97316 70%, #fde047 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-emblem {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sun-orb {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fde047, #f97316);
+      box-shadow: 0 0 28px rgba(249, 115, 22, 0.75);
+      position: absolute;
+      right: 12px;
+    }
+
+    .moon-orb {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #a78bfa, #4c1d95);
+      box-shadow: 0 0 28px rgba(139, 92, 246, 0.75);
+      position: absolute;
+      left: 12px;
+      border: 2px solid #080912;
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--sasuke-purple), var(--naruto-orange));
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 4.5rem 5%;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* FILTER TABS */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(249, 115, 22, 0.3));
+      color: #fff;
+      border-color: var(--naruto-orange);
+    }
+
+    /* GRIDS & CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, background 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background: var(--bg-card-hover);
+      border-color: rgba(139, 92, 246, 0.4);
+    }
+
+    /* FANART CARD */
+    .art-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #0c0e1a;
+      cursor: pointer;
+      display: block;
+    }
+
+    .card-body {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+      width: fit-content;
+    }
+
+    .tag-purple { background: rgba(139, 92, 246, 0.18); color: #c4b5fd; }
+    .tag-orange { background: rgba(249, 115, 22, 0.18); color: #fdba74; }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: #fff;
+    }
+
+    .card-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: auto;
+    }
+
+    .like-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .like-btn.liked {
+      background: rgba(244, 63, 94, 0.18);
+      border-color: #f43f5e;
+      color: #fda4af;
+    }
+
+    /* FANFIC PREVIEW CARD */
+    .fic-excerpt {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-bottom: 1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-style: italic;
+    }
+
+    .fic-stats {
+      font-size: 0.78rem;
+      color: var(--naruto-gold);
+      margin-bottom: 0.8rem;
+    }
+
+    /* DIGITAL MERCH */
+    .merch-preview {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #0c0e1a;
+    }
+
+    /* CONTRIBUTOR */
+    .contrib-card {
+      text-align: center;
+      padding: 1.75rem 1.25rem;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: #fff;
+      background: linear-gradient(135deg, var(--sasuke-purple), var(--naruto-orange));
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* MINI GAMES */
+    .games-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2rem;
+    }
+
+    .game-tabs {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .game-panel {
+      display: none;
+      text-align: center;
+    }
+
+    .game-panel.active {
+      display: block;
+    }
+
+    /* Game 1: Memory Match */
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(65px, 95px));
+      gap: 10px;
+      justify-content: center;
+      margin: 1.5rem auto;
+    }
+
+    .mem-card {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #1e1b4b, #311042);
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      border-radius: 12px;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .mem-card.flipped, .mem-card.matched {
+      background: #1e293b;
+      border-color: var(--naruto-orange);
+    }
+
+    /* Game 2: Trivia */
+    .quiz-box {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1.2rem;
+    }
+
+    .quiz-opt {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+
+    .quiz-opt:hover {
+      background: rgba(139, 92, 246, 0.2);
+      border-color: var(--sasuke-purple);
+    }
+
+    /* Game 3: Catch Canvas */
+    #catchCanvas {
+      background: #090b16;
+      border: 2px solid var(--sasuke-purple);
+      border-radius: 12px;
+      max-width: 100%;
+      display: block;
+      margin: 1rem auto;
+      touch-action: none;
+    }
+
+    /* MODAL / LIGHTBOX */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 5, 10, 0.88);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 999;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-card);
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      border-radius: 18px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    .modal-img {
+      width: 100%;
+      max-height: 65vh;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .preview-box {
+      background: rgba(0, 0, 0, 0.28);
+      border-left: 3px solid var(--naruto-orange);
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin: 1.2rem 0;
+      color: #e2e8f0;
+      white-space: pre-line;
+      font-size: 0.96rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 5%;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+  </style>
 </head>
-<body class="eclipse-bg font-sans antialiased selection:bg-naruto-orange selection:text-white">
+<body>
 
-    <!-- Notifikasi Toast Melayang (Pengganti alert()) -->
-    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="glass-card border-l-4 border-naruto-gold px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3">
-            <i id="toastIcon" class="fa-solid fa-sparkles text-naruto-gold text-lg"></i>
-            <span id="toastMessage" class="text-sm font-medium text-white">Notifikasi</span>
-        </div>
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#" class="logo">☾ SASUNARU ECLIPSE ☀</a>
+    <ul class="nav-links">
+      <li><a href="#fanart">Fanart</a></li>
+      <li><a href="#fanfic">Fanfic</a></li>
+      <li><a href="#merch">Digital Merch</a></li>
+      <li><a href="#contributors">Contributor</a></li>
+      <li><a href="#minigames">Mini Games</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <div class="hero-emblem">
+      <div class="moon-orb"></div>
+      <div class="sun-orb"></div>
+    </div>
+    <div class="eclipse-badge">✦ Fan Celebration Event 2026 ✦</div>
+    <h1>Sun & Moon: Eclipse Fest</h1>
+    <p>Perayaan karya penggemar untuk ikatan abadi Uzumaki Naruto & Uchiha Sasuke. Jelajahi galeri ilustrasi kurasi, cuplikan fanfiksi, merchandise digital gratis, dan mini games seru.</p>
+    <div class="cta-group">
+      <a href="#fanart" class="btn btn-primary">Jelajahi Karya</a>
+      <a href="#minigames" class="btn btn-outline">Main Mini Games 🎮</a>
+    </div>
+  </header>
+
+  <!-- FANART SECTION -->
+  <section id="fanart">
+    <div class="section-header">
+      <h2>Galeri Fanart</h2>
+      <p>Ilustrasi eksklusif yang dikurasi untuk perayaan SasuNaru Eclipse Fest. Klik gambar untuk memperbesar.</p>
+    </div>
+    <div class="filter-bar" id="artFilters">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="canon">Canonverse</button>
+      <button class="filter-btn" data-filter="modern">Modern AU</button>
+      <button class="filter-btn" data-filter="chibi">Chibi</button>
+    </div>
+    <div class="grid" id="fanartGrid"></div>
+  </section>
+
+  <!-- FANFIC SECTION (PREVIEW MODE) -->
+  <section id="fanfic">
+    <div class="section-header">
+      <h2>Arsip Fanfic (Preview)</h2>
+      <p>Baca sinopsis & kutipan pembuka di sini, lalu lanjutkan membaca cerita lengkap di platform asli penulis.</p>
+    </div>
+    <div class="filter-bar" id="ficFilters">
+      <button class="filter-btn active" data-filter="all">Semua Genre</button>
+      <button class="filter-btn" data-filter="fluff">Fluff</button>
+      <button class="filter-btn" data-filter="angst">Angst</button>
+      <button class="filter-btn" data-filter="hurt-comfort">Hurt/Comfort</button>
+    </div>
+    <div class="grid" id="fanficGrid"></div>
+  </section>
+
+  <!-- DIGITAL MERCH SECTION -->
+  <section id="merch">
+    <div class="section-header">
+      <h2>Digital Merch Gratis</h2>
+      <p>Unduh wallpaper, matching icon, dan pembatas buku edisi spesial untuk digunakan secara pribadi.</p>
+    </div>
+    <div class="grid" id="merchGrid"></div>
+  </section>
+
+  <!-- CONTRIBUTOR SECTION -->
+  <section id="contributors">
+    <div class="section-header">
+      <h2>Para Contributor</h2>
+      <p>Kreator dan panitia di balik terselenggaranya SasuNaru Eclipse Fest.</p>
+    </div>
+    <div class="grid" id="contribGrid"></div>
+  </section>
+
+  <!-- MINI GAMES SECTION -->
+  <section id="minigames">
+    <div class="section-header">
+      <h2>Zona Mini Games</h2>
+      <p>Uji pengetahuan dan refleksmu lewat tiga mini games bertema SasuNaru!</p>
     </div>
 
-    <!-- ========================================== -->
-    <!-- 1. NAVBAR & HEADER BERTEMA SASUNARU        -->
-    <!-- ========================================== -->
-    <nav class="fixed top-0 inset-x-0 z-40 glass-card border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 md:h-20">
-                <!-- Logo Acara -->
-                <a href="#beranda" class="flex items-center gap-3 group">
-                    <div class="relative w-10 h-10 flex items-center justify-center">
-                        <!-- Simbol Bulan & Matahari Berpadu -->
-                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-sasuke-purple via-indigo-500 to-naruto-orange opacity-80 group-hover:rotate-180 transition-transform duration-700"></div>
-                        <div class="relative w-8 h-8 rounded-full bg-sasuke-dark flex items-center justify-center text-xs font-bold">
-                            <span class="text-indigo-400">☾</span><span class="text-amber-400">☀</span>
-                        </div>
-                    </div>
-                    <div>
-                        <span class="font-display font-bold text-base sm:text-lg tracking-wider text-white block leading-none">SASUNARU</span>
-                        <span class="text-[10px] sm:text-xs tracking-[0.2em] uppercase text-amber-400 font-semibold">Eclipse Fest 2026</span>
-                    </div>
-                </a>
+    <div class="games-wrapper">
+      <div class="game-tabs">
+        <button class="filter-btn active" onclick="switchGame('memory', this)">🃏 Memory Match</button>
+        <button class="filter-btn" onclick="switchGame('trivia', this)">❓ Kuis Trivia</button>
+        <button class="filter-btn" onclick="switchGame('catch', this)">🍜 Tangkap Ramen & Tomat</button>
+      </div>
 
-                <!-- Menu Desktop -->
-                <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
-                    <a href="#beranda" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition">Beranda</a>
-                    <a href="#fanart" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-indigo-300 hover:bg-white/5 transition">Fanart</a>
-                    <a href="#fanfic" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-amber-300 hover:bg-white/5 transition">Fanfic</a>
-                    <a href="#merch" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-purple-300 hover:bg-white/5 transition">Digital Merch</a>
-                    <a href="#contributor" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-orange-300 hover:bg-white/5 transition">Contributor</a>
-                    <a href="#minigames" class="ml-2 px-4 py-2 rounded-xl text-sm font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-orange-500 text-white shadow-lg shadow-purple-500/25 hover:opacity-90 transition flex items-center gap-2">
-                        <i class="fa-solid fa-gamepad"></i> Mini Games
-                    </a>
-                </div>
+      <!-- GAME 1: MEMORY -->
+      <div id="game-memory" class="game-panel active">
+        <h3>SasuNaru Memory Match</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Cocokkan pasangan simbol Matahari, Bulan, Ramen, Tomat, Sharingan, dan Rubah!</p>
+        <p style="margin-top:0.5rem;">Langkah: <strong id="memMoves">0</strong> | Pasangan: <strong id="memPairs">0/6</strong></p>
+        <div class="memory-grid" id="memoryGrid"></div>
+        <button class="btn btn-outline" onclick="initMemoryGame()">Acak Ulang Kartu</button>
+      </div>
 
-                <!-- Tombol Menu Mobile -->
-                <div class="md:hidden">
-                    <button id="mobileMenuBtn" class="p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none" aria-label="Buka Menu">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+      <!-- GAME 2: TRIVIA -->
+      <div id="game-trivia" class="game-panel">
+        <h3>Kuis Seberapa Kenal SasuNaru</h3>
+        <div class="quiz-box" id="quizContainer"></div>
+      </div>
 
-        <!-- Dropdown Menu Mobile -->
-        <div id="mobileMenu" class="hidden md:hidden glass-card border-t border-white/10 px-4 pt-2 pb-5 space-y-1">
-            <a href="#beranda" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10">Beranda</a>
-            <a href="#fanart" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-indigo-300 hover:bg-white/10">Galeri Fanart</a>
-            <a href="#fanfic" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-amber-300 hover:bg-white/10">Arsip Fanfic</a>
-            <a href="#merch" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-purple-300 hover:bg-white/10">Digital Merch</a>
-            <a href="#contributor" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-orange-300 hover:bg-white/10">Contributor</a>
-            <a href="#minigames" class="mobile-link block px-4 py-3 rounded-xl text-base font-bold bg-gradient-to-r from-indigo-600 to-orange-500 text-white text-center mt-2">
-                <i class="fa-solid fa-gamepad mr-2"></i> Mainkan Mini Games
-            </a>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION / BANNER ACARA -->
-    <header id="beranda" class="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
-        <!-- Dekorasi Ornamen Gerhana SVG Latar Belakang -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] sm:w-[540px] sm:h-[540px] pointer-events-none opacity-35">
-            <svg viewBox="0 0 400 400" class="w-full h-full animate-spin-slow">
-                <defs>
-                    <linearGradient id="eclipseRing" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#6366f1" />
-                        <stop offset="50%" stop-color="#a855f7" />
-                        <stop offset="100%" stop-color="#f97316" />
-                    </linearGradient>
-                </defs>
-                <circle cx="200" cy="200" r="185" fill="none" stroke="url(#eclipseRing)" stroke-width="1.5" stroke-dasharray="12 8" />
-                <circle cx="200" cy="200" r="155" fill="none" stroke="url(#eclipseRing)" stroke-width="0.8" />
-            </svg>
-        </div>
-
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <!-- Lencana Status Acara -->
-            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-card border border-amber-400/30 mb-6 animate-float">
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span>
-                <span class="text-xs sm:text-sm font-semibold tracking-wide text-amber-200">
-                    <span class="text-indigo-400">☾ Yin</span> & <span class="text-amber-400">Yang ☀</span> • Perayaan Tahunan Komunitas Indonesia
-                </span>
-            </div>
-
-            <!-- Judul Utama -->
-            <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight">
-                <span class="block text-white drop-shadow-md">SUN & MOON</span>
-                <span class="text-sasunaru">SasuNaru Eclipse Fest</span>
-            </h1>
-
-            <p class="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed mb-10">
-                Merayakan ikatan abadi antara Bulan yang tenang dalam bayangan dan Matahari yang bersinar terang. Jelajahi puluhan karya fanart, fanfiksi eksklusif, merchandise digital gratis, serta mini-game interaktif!
-            </p>
-
-            <!-- Hitung Mundur Acara (Countdown) -->
-            <div class="max-w-xl mx-auto mb-10">
-                <p class="text-xs uppercase tracking-[0.25em] text-slate-400 mb-3 font-semibold">Penutupan Pameran & Pengumuman Zine Eksklusif Dalam</p>
-                <div class="grid grid-cols-4 gap-2 sm:gap-4">
-                    <div class="glass-card rounded-2xl p-3 sm:p-4 border-t-2 border-indigo-500">
-                        <span id="cd-days" class="block font-display text-2xl sm:text-4xl font-bold text-indigo-300">07</span>
-                        <span class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider">Hari</span>
-                    </div>
-                    <div class="glass-card rounded-2xl p-3 sm:p-4 border-t-2 border-purple-500">
-                        <span id="cd-hours" class="block font-display text-2xl sm:text-4xl font-bold text-purple-300">14</span>
-                        <span class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider">Jam</span>
-                    </div>
-                    <div class="glass-card rounded-2xl p-3 sm:p-4 border-t-2 border-orange-500">
-                        <span id="cd-minutes" class="block font-display text-2xl sm:text-4xl font-bold text-orange-300">42</span>
-                        <span class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider">Menit</span>
-                    </div>
-                    <div class="glass-card rounded-2xl p-3 sm:p-4 border-t-2 border-amber-400">
-                        <span id="cd-seconds" class="block font-display text-2xl sm:text-4xl font-bold text-amber-300">19</span>
-                        <span class="text-[11px] sm:text-xs text-slate-400 uppercase tracking-wider">Detik</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tombol Aksi Utama -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#fanart" class="w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-600/30 transition flex items-center justify-center gap-2.5">
-                    <i class="fa-solid fa-palette"></i> Jelajahi Karya Penggemar
-                </a>
-                <a href="#minigames" class="w-full sm:w-auto px-8 py-4 rounded-2xl font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 hover:to-orange-400 shadow-lg shadow-orange-500/30 transition flex items-center justify-center gap-2.5">
-                    <i class="fa-solid fa-bolt"></i> Mainkan Mini Games
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- ========================================== -->
-    <!-- 2. BAGIAN FANART (GALERI INTERAKTIF)       -->
-    <!-- ========================================== -->
-    <section id="fanart" class="py-20 relative border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Header Seksi -->
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div>
-                    <div class="flex items-center gap-2 text-indigo-400 font-semibold text-sm uppercase tracking-widest mb-2">
-                        <i class="fa-solid fa-moon"></i> Galeri Ilustrasi
-                    </div>
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">Pameran Fanart <span class="text-indigo-400">Sasu</span><span class="text-amber-400">Naru</span></h2>
-                </div>
-
-                <!-- Filter Kategori Fanart -->
-                <div class="flex flex-wrap gap-2" id="fanartFilters">
-                    <button data-filter="all" class="fanart-filter-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-gradient-to-r from-indigo-600 to-orange-500 text-white shadow-md transition">
-                        Semua Karya
-                    </button>
-                    <button data-filter="Canonverse" class="fanart-filter-btn px-4 py-2 rounded-xl text-sm font-semibold glass-card text-slate-300 hover:text-white transition">
-                        Canonverse
-                    </button>
-                    <button data-filter="Modern AU" class="fanart-filter-btn px-4 py-2 rounded-xl text-sm font-semibold glass-card text-slate-300 hover:text-white transition">
-                        Modern AU
-                    </button>
-                    <button data-filter="Chibi" class="fanart-filter-btn px-4 py-2 rounded-xl text-sm font-semibold glass-card text-slate-300 hover:text-white transition">
-                        Chibi Lucu
-                    </button>
-                </div>
-            </div>
-
-            <!-- Grid Kartu Fanart (Diisi via JS dengan Ilustrasi SVG Kustom Estetis) -->
-            <div id="fanartGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <!-- Item dirender dinamis oleh JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- 3. BAGIAN FANFIC (ARSIP CERITA PENGGEMAR)  -->
-    <!-- ========================================== -->
-    <section id="fanfic" class="py-20 relative border-t border-white/5 bg-sasuke-dark/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Header Seksi -->
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                <div>
-                    <div class="flex items-center gap-2 text-amber-400 font-semibold text-sm uppercase tracking-widest mb-2">
-                        <i class="fa-solid fa-sun"></i> Perpustakaan Kisah
-                    </div>
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">Antologi <span class="text-sasunaru">Fanfiction</span></h2>
-                    <p class="text-slate-400 text-sm mt-2">Klik "Baca Cepat" untuk menikmati cuplikan bab spesial acara ini langsung di tempat.</p>
-                </div>
-
-                <!-- Filter Genre/Tag Fanfic -->
-                <div class="flex flex-wrap gap-2" id="fanficFilters">
-                    <button data-tag="all" class="fanfic-filter-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-md transition">
-                        Semua Genre
-                    </button>
-                    <button data-tag="Fluff" class="fanfic-filter-btn px-4 py-2 rounded-xl text-sm font-semibold glass-card text-slate-300 hover:text-white transition">
-                        Fluff
-                    </button>
-                    <button data-tag="Angst" class="fanfic-filter-btn px-4 py-2 rounded-xl text-sm font-semibold glass-card text-slate-300 hover:text-white transition">
-                        Angst
-                    </button>
-                    <button data-tag="Hurt/Comfort" class="fanfic-filter-btn px-4 py-2 rounded-xl text-sm font-semibold glass-card text-slate-300 hover:text-white transition">
-                        Hurt/Comfort
-                    </button>
-                    <button data-tag="Time Travel" class="fanfic-filter-btn px-4 py-2 rounded-xl text-sm font-semibold glass-card text-slate-300 hover:text-white transition">
-                        Time Travel
-                    </button>
-                </div>
-            </div>
-
-            <!-- Daftar Kartu Fanfic -->
-            <div id="fanficList" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Item dirender dinamis oleh JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- 4. BAGIAN DIGITAL MERCH (UNDUHAN GRATIS)   -->
-    <!-- ========================================== -->
-    <section id="merch" class="py-20 relative border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <div class="inline-flex items-center gap-2 text-purple-400 font-semibold text-sm uppercase tracking-widest mb-2">
-                    <i class="fa-solid fa-gift"></i> Hadiah Komunitas
-                </div>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">Digital <span class="text-sasunaru">Merchandise</span> Gratis</h2>
-                <p class="text-slate-400 text-sm sm:text-base">Simpan dan gunakan paket wallpaper resolusi tinggi, ikon profil pasangan (matching icons), serta pembatas buku cetak khusus peserta festival.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Merch 1: Wallpaper Ponsel & Desktop -->
-                <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col">
-                    <div class="relative h-56 bg-gradient-to-br from-indigo-950 via-purple-900 to-orange-900 flex items-center justify-center p-6 overflow-hidden">
-                        <!-- Pratinjau Ponsel & Layar -->
-                        <div class="w-28 h-44 rounded-2xl border-2 border-white/30 bg-slate-950 shadow-2xl flex flex-col items-center justify-between p-3 relative z-10 transform -rotate-6">
-                            <span class="text-[9px] text-slate-400 font-mono">07:10</span>
-                            <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-indigo-500 to-amber-400 flex items-center justify-center shadow-lg shadow-amber-500/40">
-                                <span class="text-white text-sm">☾☀</span>
-                            </div>
-                            <span class="text-[8px] text-amber-300 tracking-widest uppercase">Eclipse 2026</span>
-                        </div>
-                        <div class="w-36 h-24 rounded-xl border-2 border-white/20 bg-slate-900/90 shadow-xl flex items-center justify-center p-2 -ml-4 mt-10 transform rotate-6">
-                            <div class="text-center">
-                                <div class="text-xs font-display font-bold text-sasunaru">VALLEY OF THE END</div>
-                                <div class="text-[8px] text-slate-400 mt-1">4K Desktop Edition</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-indigo-500/20 text-indigo-300">Wallpaper Pack</span>
-                                <span class="text-xs text-slate-400">PNG • 4K UHD</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Paket Wallpaper "Yin & Yang"</h3>
-                            <p class="text-slate-400 text-sm mb-6">Berisi 2 variasi wallpaper ponsel (Lockscreen & Homescreen) serta 1 wallpaper desktop bertema gerhana matahari & bulan.</p>
-                        </div>
-                        <button onclick="downloadMerch('wallpaper')" class="w-full py-3 px-4 rounded-xl font-bold text-sm bg-white/10 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-600 text-white border border-white/10 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-download"></i> Unduh Wallpaper (PNG)
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Merch 2: Matching Icons (Ikon Profil Pasangan) -->
-                <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col">
-                    <div class="relative h-56 bg-gradient-to-br from-slate-900 via-indigo-950 to-amber-950 flex items-center justify-center gap-4 p-6">
-                        <!-- Ikon Sasuke -->
-                        <div class="text-center">
-                            <div class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-indigo-500 to-purple-500 shadow-lg shadow-indigo-500/30">
-                                <div class="w-full h-full rounded-full bg-sasuke-dark flex items-center justify-center">
-                                    <svg viewBox="0 0 64 64" class="w-14 h-14">
-                                        <circle cx="32" cy="32" r="26" fill="#1e1b4b" stroke="#818cf8" stroke-width="2"/>
-                                        <path d="M36 16 A16 16 0 1 0 46 42 A12 12 0 1 1 36 16 Z" fill="#c4b5fd"/>
-                                        <circle cx="22" cy="24" r="2" fill="#38bdf8"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <span class="text-[11px] font-semibold text-indigo-300 mt-2 block">Icon: Uchiha</span>
-                        </div>
-                        <i class="fa-solid fa-link text-slate-500 text-lg"></i>
-                        <!-- Ikon Naruto -->
-                        <div class="text-center">
-                            <div class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-orange-500 to-amber-400 shadow-lg shadow-orange-500/30">
-                                <div class="w-full h-full rounded-full bg-sasuke-dark flex items-center justify-center">
-                                    <svg viewBox="0 0 64 64" class="w-14 h-14">
-                                        <circle cx="32" cy="32" r="26" fill="#431407" stroke="#fbbf24" stroke-width="2"/>
-                                        <circle cx="32" cy="32" r="11" fill="#fbbf24"/>
-                                        <g stroke="#f97316" stroke-width="2.5" stroke-linecap="round">
-                                            <line x1="32" y1="12" x2="32" y2="17"/>
-                                            <line x1="32" y1="47" x2="32" y2="52"/>
-                                            <line x1="12" y1="32" x2="17" y2="32"/>
-                                            <line x1="47" y1="32" x2="52" y2="32"/>
-                                        </g>
-                                    </svg>
-                                </div>
-                            </div>
-                            <span class="text-[11px] font-semibold text-amber-300 mt-2 block">Icon: Uzumaki</span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300">Matching Icons</span>
-                                <span class="text-xs text-slate-400">Set Couple • HD</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Ikon Profil Pasangan (Couple)</h3>
-                            <p class="text-slate-400 text-sm mb-6">Cocok dipakai berdua bersama sahabat atau pasangan di media sosial! Tersedia bingkai Bulan Sabit & Matahari.</p>
-                        </div>
-                        <button onclick="downloadMerch('icons')" class="w-full py-3 px-4 rounded-xl font-bold text-sm bg-white/10 hover:bg-gradient-to-r hover:from-amber-500 hover:to-orange-600 text-white border border-white/10 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-download"></i> Unduh Set Ikon (PNG)
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Merch 3: Pembatas Buku & Mini Zine Preview -->
-                <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col">
-                    <div class="relative h-56 bg-gradient-to-br from-purple-950 via-slate-900 to-orange-950 flex items-center justify-center p-6">
-                        <!-- Pratinjau Pembatas Buku -->
-                        <div class="w-20 h-44 rounded-xl bg-gradient-to-b from-indigo-900 via-purple-900 to-orange-600 border border-amber-300/40 shadow-2xl p-2.5 flex flex-col justify-between items-center text-center">
-                            <div class="w-2.5 h-2.5 rounded-full bg-slate-950 border border-amber-300"></div>
-                            <div class="my-auto">
-                                <div class="text-amber-300 text-lg mb-1">☾ ✦ ☀</div>
-                                <div class="font-display text-[9px] font-bold text-white leading-tight tracking-wider">ALWAYS MY FRIEND</div>
-                            </div>
-                            <div class="text-[7px] text-amber-200/80 uppercase tracking-widest">SN Fest '26</div>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-purple-500/20 text-purple-300">Printable Merch</span>
-                                <span class="text-xs text-slate-400">Siap Cetak • 300 DPI</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Pembatas Buku & Sampul Zine</h3>
-                            <p class="text-slate-400 text-sm mb-6">Templat pembatas buku dua sisi dengan kutipan ikonik Lembah Akhir yang bisa langsung dicetak di rumah.</p>
-                        </div>
-                        <button onclick="downloadMerch('bookmark')" class="w-full py-3 px-4 rounded-xl font-bold text-sm bg-white/10 hover:bg-gradient-to-r hover:from-purple-600 hover:to-orange-500 text-white border border-white/10 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-print"></i> Unduh Pembatas Buku
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- 5. BAGIAN CONTRIBUTOR (PROFIL KREATOR)     -->
-    <!-- ========================================== -->
-    <section id="contributor" class="py-20 relative border-t border-white/5 bg-sasuke-dark/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-                <div>
-                    <div class="flex items-center gap-2 text-orange-400 font-semibold text-sm uppercase tracking-widest mb-2">
-                        <i class="fa-solid fa-users-rays"></i> Di Balik Layar
-                    </div>
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">Para <span class="text-sasunaru">Contributor</span> Acara</h2>
-                </div>
-                <p class="text-slate-400 text-sm max-w-md">Apresiasi setinggi-tingginya untuk para ilustrator, penulis, dan moderator yang mewujudkan SasuNaru Eclipse Fest 2026.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="contributorGrid">
-                <!-- Dirender via JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- 6. BAGIAN MINI GAMES INTERAKTIF            -->
-    <!-- ========================================== -->
-    <section id="minigames" class="py-20 relative border-t border-white/5">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <div class="inline-flex items-center gap-2 text-amber-400 font-semibold text-sm uppercase tracking-widest mb-2">
-                    <i class="fa-solid fa-gamepad"></i> Zona Hiburan Penggemar
-                </div>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-3">SasuNaru <span class="text-sasunaru">Mini Games</span></h2>
-                <p class="text-slate-400 text-sm sm:text-base">Pilih salah satu dari 3 permainan mini di bawah ini untuk menguji ingatan, pengetahuan, dan ketangkasanmu!</p>
-            </div>
-
-            <!-- Tab Navigasi Mini Games -->
-            <div class="flex flex-wrap justify-center gap-3 mb-8">
-                <button onclick="switchGameTab('memory')" id="tab-memory" class="game-tab-btn px-5 py-3 rounded-2xl font-bold text-sm bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg transition flex items-center gap-2">
-                    <i class="fa-solid fa-clone"></i> 1. Memory Match
-                </button>
-                <button onclick="switchGameTab('quiz')" id="tab-quiz" class="game-tab-btn px-5 py-3 rounded-2xl font-bold text-sm glass-card text-slate-300 hover:text-white transition flex items-center gap-2">
-                    <i class="fa-solid fa-circle-question"></i> 2. Kuis Trivia SasuNaru
-                </button>
-                <button onclick="switchGameTab('arcade')" id="tab-arcade" class="game-tab-btn px-5 py-3 rounded-2xl font-bold text-sm glass-card text-slate-300 hover:text-white transition flex items-center gap-2">
-                    <i class="fa-solid fa-bowl-food"></i> 3. Tangkap Ramen & Tomat
-                </button>
-            </div>
-
-            <!-- KONTAINER GAME 1: SASUNARU MEMORY MATCH -->
-            <div id="game-memory" class="glass-card rounded-3xl p-6 sm:p-8 border border-indigo-500/20">
-                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
-                    <div>
-                        <h3 class="text-xl font-bold text-white">SasuNaru Memory Match</h3>
-                        <p class="text-xs text-slate-400">Cocokkan 8 pasang simbol ikonik Bulan & Matahari!</p>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="px-4 py-2 rounded-xl bg-white/5 text-center">
-                            <span class="text-[10px] uppercase text-slate-400 block">Langkah</span>
-                            <span id="mem-moves" class="font-bold text-indigo-300 text-lg">0</span>
-                        </div>
-                        <div class="px-4 py-2 rounded-xl bg-white/5 text-center">
-                            <span class="text-[10px] uppercase text-slate-400 block">Waktu</span>
-                            <span id="mem-timer" class="font-bold text-amber-300 text-lg">00:00</span>
-                        </div>
-                        <button onclick="initMemoryGame()" class="px-4 py-2.5 rounded-xl font-bold text-xs bg-indigo-600 hover:bg-indigo-500 text-white transition flex items-center gap-1.5">
-                            <i class="fa-solid fa-rotate-right"></i> Ulangi
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Grid Kartu 4x4 -->
-                <div id="memoryBoard" class="grid grid-cols-4 gap-2.5 sm:gap-4 max-w-md mx-auto">
-                    <!-- Kartu dibuat oleh JS -->
-                </div>
-
-                <!-- Pesan Kemenangan Memory Game -->
-                <div id="memoryWinBanner" class="hidden mt-6 p-5 rounded-2xl bg-gradient-to-r from-indigo-900/80 to-orange-900/80 border border-amber-400/40 text-center">
-                    <h4 class="font-display text-xl font-bold text-amber-300 mb-1">Harmoni Yin & Yang Tercapai!</h4>
-                    <p id="memoryWinStats" class="text-sm text-slate-200 mb-3">Kamu menyelesaikan semua pasangan!</p>
-                    <button onclick="initMemoryGame()" class="px-5 py-2 rounded-xl bg-amber-400 text-slate-950 font-bold text-xs hover:bg-amber-300 transition">Main Lagi</button>
-                </div>
-            </div>
-
-            <!-- KONTAINER GAME 2: KUIS TRIVIA SASUNARU -->
-            <div id="game-quiz" class="hidden glass-card rounded-3xl p-6 sm:p-8 border border-amber-500/20">
-                <div id="quizActiveArea">
-                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
-                        <span id="quizProgressText" class="text-xs font-bold uppercase tracking-wider text-amber-400">Pertanyaan 1 dari 5</span>
-                        <span id="quizScoreBadge" class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold">Skor: 0</span>
-                    </div>
-
-                    <h3 id="quizQuestion" class="text-lg sm:text-2xl font-bold text-white mb-6 leading-snug">Memuat pertanyaan...</h3>
-
-                    <div id="quizOptions" class="space-y-3">
-                        <!-- Pilihan jawaban dirender via JS -->
-                    </div>
-                </div>
-
-                <!-- Hasil Akhir Kuis -->
-                <div id="quizResultArea" class="hidden text-center py-6">
-                    <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-indigo-600 to-amber-500 flex items-center justify-center text-3xl mb-4 shadow-xl">
-                        🏆
-                    </div>
-                    <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Gelar Penggemar Kamu</span>
-                    <h3 id="quizRankTitle" class="font-display text-2xl sm:text-3xl font-bold text-white mt-1 mb-2">Sahabat Sejati Lembah Akhir</h3>
-                    <p id="quizResultDesc" class="text-slate-300 text-sm max-w-md mx-auto mb-6">Skor kamu luar biasa!</p>
-                    <button onclick="initQuizGame()" class="px-6 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-indigo-600 to-orange-500 text-white hover:opacity-90 transition">
-                        <i class="fa-solid fa-rotate-right mr-2"></i> Ulangi Kuis
-                    </button>
-                </div>
-            </div>
-
-            <!-- KONTAINER GAME 3: TANGKAP RAMEN & TOMAT (CANVAS ARKADE) -->
-            <div id="game-arcade" class="hidden glass-card rounded-3xl p-6 sm:p-8 border border-purple-500/20">
-                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
-                    <div>
-                        <h3 class="text-xl font-bold text-white">Tangkap Ramen & Tomat!</h3>
-                        <p class="text-xs text-slate-400">Gerakkan simbol <span class="text-indigo-300 font-bold">☾</span><span class="text-amber-300 font-bold">☀</span> untuk menangkap 🍜 Ramen (+10) & 🍅 Tomat/🍙 Onigiri (+15). Hindari 💣 Kunai Peledak!</p>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="px-4 py-1.5 rounded-xl bg-white/5 text-center">
-                            <span class="text-[10px] text-slate-400 block">SKOR</span>
-                            <span id="arcadeScore" class="font-bold text-amber-400 text-lg">0</span>
-                        </div>
-                        <div class="px-4 py-1.5 rounded-xl bg-white/5 text-center">
-                            <span class="text-[10px] text-slate-400 block">NYAWA</span>
-                            <span id="arcadeLives" class="font-bold text-rose-400 text-lg">❤️❤️❤️</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Area Kanvas Permainan -->
-                <div class="relative w-full max-w-2xl mx-auto h-[340px] sm:h-[380px] rounded-2xl overflow-hidden border border-white/15 bg-slate-950">
-                    <canvas id="arcadeCanvas" class="w-full h-full block"></canvas>
-                    
-                    <!-- Overlay Mulai / Game Over -->
-                    <div id="arcadeOverlay" class="absolute inset-0 bg-slate-950/85 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center">
-                        <div class="text-4xl mb-3">🍜 ☾☀ 🍅</div>
-                        <h4 id="arcadeOverlayTitle" class="font-display text-2xl font-bold text-white mb-2">Siap Berburu Makanan Favorit?</h4>
-                        <p id="arcadeOverlayDesc" class="text-xs sm:text-sm text-slate-300 max-w-sm mb-5">Gunakan tombol panah Kiri/Kanan, sentuh & geser di layar, atau tombol kontrol di bawah.</p>
-                        <button onclick="startArcadeGame()" class="px-7 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 shadow-lg hover:scale-105 transition">
-                            <i class="fa-solid fa-play mr-2"></i> Mulai Permainan
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Tombol Kontrol Sentuh Mobile/Desktop di luar Kanvas -->
-                <div class="flex justify-center gap-6 mt-4">
-                    <button id="btnLeftArcade" class="px-8 py-3.5 rounded-2xl glass-card active:bg-indigo-600/50 text-white font-bold text-lg select-none border border-indigo-400/30">
-                        <i class="fa-solid fa-arrow-left"></i> Kiri
-                    </button>
-                    <button id="btnRightArcade" class="px-8 py-3.5 rounded-2xl glass-card active:bg-orange-600/50 text-white font-bold text-lg select-none border border-orange-400/30">
-                        Kanan <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- FOOTER                                     -->
-    <!-- ========================================== -->
-    <footer class="border-t border-white/10 py-12 bg-sasuke-dark/80 mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="text-center md:text-left">
-                <div class="font-display font-bold text-lg text-white">SASUNARU ECLIPSE FEST 2026</div>
-                <p class="text-xs text-slate-400 mt-1">Acara non-profit oleh penggemar, untuk penggemar. Karakter Naruto & Sasuke dimiliki oleh Masashi Kishimoto.</p>
-            </div>
-            <div class="flex items-center gap-4 text-slate-400">
-                <a href="#beranda" class="hover:text-amber-400 transition text-sm">Kembali ke Atas ↑</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ========================================== -->
-    <!-- MODAL LIGHTBOX FANART                      -->
-    <!-- ========================================== -->
-    <div id="fanartModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-        <div class="glass-card max-w-2xl w-full rounded-3xl overflow-hidden border border-white/15 shadow-2xl animate-fade-in">
-            <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
-                <div>
-                    <span id="modalArtCategory" class="text-xs font-bold uppercase tracking-wider text-indigo-400">Canonverse</span>
-                    <h3 id="modalArtTitle" class="text-xl font-bold text-white">Judul Karya</h3>
-                </div>
-                <button onclick="closeFanartModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div id="modalArtCanvas" class="w-full h-72 sm:h-80 flex items-center justify-center p-6 bg-slate-950">
-                <!-- Ilustrasi SVG besar disuntikkan di sini -->
-            </div>
-            <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div>
-                    <p class="text-sm text-slate-300" id="modalArtDesc">Deskripsi karya.</p>
-                    <p class="text-xs text-amber-400 font-semibold mt-1" id="modalArtArtist">Oleh @artist</p>
-                </div>
-                <button id="modalArtLikeBtn" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-rose-500/20 text-rose-300 border border-rose-500/30 hover:bg-rose-500 hover:text-white transition flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-heart"></i> <span id="modalArtLikesCount">0</span> Suka
-                </button>
-            </div>
-        </div>
+      <!-- GAME 3: CATCH -->
+      <div id="game-catch" class="game-panel">
+        <h3>Tangkap Ramen & Tomat!</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem;">Geser keranjang (Mouse / Sentuh layar / Panah Kiri-Kanan) untuk menangkap 🍜 & 🍅. Hindari ⚡!</p>
+        <p style="margin-top:0.5rem;">Skor: <strong id="catchScore">0</strong> | Nyawa: <strong id="catchLives">3</strong></p>
+        <canvas id="catchCanvas" width="420" height="320"></canvas>
+        <button class="btn btn-primary" onclick="startCatchGame()">Mulai / Main Lagi</button>
+      </div>
     </div>
+  </section>
 
-    <!-- ========================================== -->
-    <!-- MODAL BACA CEPAT FANFIC                    -->
-    <!-- ========================================== -->
-    <div id="fanficModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-        <div class="glass-card max-w-3xl w-full max-h-[88vh] flex flex-col rounded-3xl overflow-hidden border border-amber-400/25 shadow-2xl">
-            <!-- Header Modal Fanfic -->
-            <div class="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-sasuke-dark/90">
-                <div>
-                    <div class="flex items-center gap-2 mb-1">
-                        <span id="ffModalRating" class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">Teen</span>
-                        <span id="ffModalWords" class="text-xs text-slate-400">3.450 Kata</span>
-                    </div>
-                    <h3 id="ffModalTitle" class="text-lg sm:text-xl font-bold text-white">Judul Fanfic</h3>
-                    <p id="ffModalAuthor" class="text-xs text-indigo-300">Ditulis oleh @penulis</p>
-                </div>
-                <button onclick="closeFanficModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <!-- Navigasi Bab -->
-            <div id="ffChapterTabs" class="px-6 py-2.5 bg-white/5 border-b border-white/10 flex gap-2 overflow-x-auto">
-                <!-- Tombol bab dirender JS -->
-            </div>
-
-            <!-- Isi Teks Cerita -->
-            <div id="ffModalBody" class="p-6 sm:p-8 overflow-y-auto space-y-4 text-slate-200 leading-relaxed text-sm sm:text-base font-sans">
-                <!-- Paragraf cerita dirender JS -->
-            </div>
-        </div>
+  <!-- MODAL PREVIEW (FANART & FANFIC) -->
+  <div class="modal" id="previewModal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="forceCloseModal()">&times;</button>
+      <div id="modalBody"></div>
     </div>
+  </div>
 
-    <!-- ========================================== -->
-    <!-- JAVASCRIPT INTERAKTIF LENGKAP              -->
-    <!-- ========================================== -->
-    <script>
-        // --- 1. DATA ACARA (FANART, FANFIC, CONTRIBUTOR) ---
-        const fanartData = [
-            {
-                id: 1,
-                title: "Gerhana di Lembah Akhir",
-                artist: "@TsukiKitsune_Art",
-                category: "Canonverse",
-                likes: 248,
-                liked: false,
-                desc: "Pertemuan dua segel Rikudou di bawah langit senja yang membelah siang dan malam.",
-                svg: `<svg viewBox="0 0 300 220" class="w-full h-full">
-                        <defs>
-                            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#1e1b4b"/>
-                                <stop offset="50%" stop-color="#581c87"/>
-                                <stop offset="100%" stop-color="#ea580c"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="300" height="220" fill="url(#g1)"/>
-                        <circle cx="150" cy="100" r="58" fill="#090914" stroke="#fbbf24" stroke-width="3"/>
-                        <circle cx="150" cy="100" r="68" fill="none" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="6 4"/>
-                        <path d="M115 95 A20 20 0 1 0 130 122 A15 15 0 1 1 115 95 Z" fill="#a5b4fc"/>
-                        <circle cx="178" cy="105" r="14" fill="#fbbf24"/>
-                        <path d="M0 185 Q150 155 300 185 L300 220 L0 220 Z" fill="#070710"/>
-                      </svg>`
-            },
-            {
-                id: 2,
-                title: "Kopi Pagi & Ramen Tengah Malam",
-                artist: "@KonohaSketch",
-                category: "Modern AU",
-                likes: 312,
-                liked: false,
-                desc: "Apartemen kecil di Tokyo; Sasuke dengan espresso hitamnya dan Naruto dengan semangkuk ramen hangat.",
-                svg: `<svg viewBox="0 0 300 220" class="w-full h-full">
-                        <defs>
-                            <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
-                                <stop offset="0%" stop-color="#0f172a"/>
-                                <stop offset="100%" stop-color="#7c2d12"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="300" height="220" fill="url(#g2)"/>
-                        <rect x="40" y="30" width="220" height="130" rx="12" fill="#1e293b" stroke="#f97316" stroke-width="2"/>
-                        <circle cx="95" cy="75" r="24" fill="#fde047" opacity="0.85"/>
-                        <path d="M40 135 L110 95 L170 130 L220 100 L260 135 L260 160 L40 160 Z" fill="#312e81"/>
-                        <rect x="95" y="145" width="35" height="25" rx="4" fill="#6366f1"/>
-                        <path d="M165 145 Q185 175 205 145 Z" fill="#fb923c"/>
-                      </svg>`
-            },
-            {
-                id: 3,
-                title: "Rubah Kecil & Elang Pemalu",
-                artist: "@MochiDango",
-                category: "Chibi",
-                likes: 419,
-                liked: false,
-                desc: "Versi chibi menggemaskan saat Kurama kecil tertidur di atas sayap elang Sasuke.",
-                svg: `<svg viewBox="0 0 300 220" class="w-full h-full">
-                        <rect width="300" height="220" fill="#17153b"/>
-                        <circle cx="110" cy="115" r="38" fill="#4338ca"/>
-                        <polygon points="85,88 95,60 112,82" fill="#4338ca"/>
-                        <polygon points="135,88 125,60 108,82" fill="#4338ca"/>
-                        <circle cx="190" cy="118" r="36" fill="#f97316"/>
-                        <polygon points="165,92 172,62 190,85" fill="#f97316"/>
-                        <polygon points="215,92 208,62 190,85" fill="#f97316"/>
-                        <path d="M142 85 Q150 75 158 85 Q150 98 142 85 Z" fill="#f43f5e"/>
-                      </svg>`
-            },
-            {
-                id: 4,
-                title: "Susanoo & Kurama Avatar",
-                artist: "@RikudouCanvas",
-                category: "Canonverse",
-                likes: 289,
-                liked: false,
-                desc: "Zirah Ungu menyelimuti Rubah Emas — kombinasi pertahanan dan kekuatan tertinggi.",
-                svg: `<svg viewBox="0 0 300 220" class="w-full h-full">
-                        <rect width="300" height="220" fill="#090914"/>
-                        <circle cx="150" cy="110" r="85" fill="none" stroke="#a855f7" stroke-width="6" opacity="0.6"/>
-                        <circle cx="150" cy="110" r="62" fill="none" stroke="#f59e0b" stroke-width="6" opacity="0.8"/>
-                        <polygon points="150,45 195,145 105,145" fill="none" stroke="#38bdf8" stroke-width="3"/>
-                        <polygon points="150,175 195,75 105,75" fill="none" stroke="#fb923c" stroke-width="3"/>
-                      </svg>`
-            },
-            {
-                id: 5,
-                title: "Festival Kembang Api Musim Panas",
-                artist: "@HanabiNights",
-                category: "Modern AU",
-                likes: 356,
-                liked: false,
-                desc: "Berjalan beriringan mengenakan yukata biru tua dan oranye di bawah ledakan kembang api.",
-                svg: `<svg viewBox="0 0 300 220" class="w-full h-full">
-                        <rect width="300" height="220" fill="#0c0a20"/>
-                        <circle cx="95" cy="70" r="35" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="4 6"/>
-                        <circle cx="205" cy="65" r="42" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5 5"/>
-                        <circle cx="150" cy="95" r="25" fill="none" stroke="#c084fc" stroke-width="2" stroke-dasharray="3 5"/>
-                        <rect x="0" y="175" width="300" height="45" fill="#1e1b4b"/>
-                      </svg>`
-            },
-            {
-                id: 6,
-                title: "Berbagi Onigiri & Ramen",
-                artist: "@ChibiUchiha",
-                category: "Chibi",
-                likes: 274,
-                liked: false,
-                desc: "Naruto memaksa Sasuke mencicipi kuah miso ramen sementara Sasuke menyodorkan onigiri tomat.",
-                svg: `<svg viewBox="0 0 300 220" class="w-full h-full">
-                        <rect width="300" height="220" fill="#1e1633"/>
-                        <polygon points="105,75 70,145 140,145" rx="10" fill="#f8fafc"/>
-                        <rect x="92" y="122" width="26" height="23" fill="#0f172a"/>
-                        <path d="M165 105 L235 105 Q230 150 200 150 Q170 150 165 105 Z" fill="#ea580c"/>
-                        <line x1="160" y1="88" x2="240" y2="96" stroke="#fde047" stroke-width="3"/>
-                      </svg>`
-            }
-        ];
+  <footer>
+    <p>SasuNaru Eclipse Fest 2026 — Dibuat oleh penggemar untuk penggemar. Karakter Naruto & Sasuke milik Masashi Kishimoto.</p>
+  </footer>
 
-        const fanficData = [
-            {
-                id: 1,
-                title: "Di Bawah Langit Tanpa Bulan",
-                author: "@LangitSenja_Fic",
-                words: "4.820 Kata",
-                rating: "Teen",
-                tags: ["Angst", "Hurt/Comfort"],
-                synopsis: "Setelah perjalanan panjang menebus dosa, Sasuke kembali ke Konoha saat hujan deras mengguyur gerbang desa. Naruto sudah menunggunya di sana, membawa payung dan kehangatan yang tak pernah padam.",
-                chapters: [
-                    {
-                        title: "Bab 1: Hujan di Gerbang Konoha",
-                        content: [
-                            "Rintik hujan jatuh membasahi jubah hitam yang telah usang dimakan perjalanan lintas dimensi. Sasuke berhenti tepat tiga langkah di depan gerbang utama Konohagakure, menatap cahaya lentera oranye yang berpendar hangat di balik tirai air.",
-                            "\"Kau terlambat lagi, Teme,\" sebuah suara yang sangat dikenalnya memecah deru hujan. Suara itu tidak membawa amarah, melainkan kelegaan yang telah dipendam bertahun-tahun.",
-                            "Naruto berdiri di sana tanpa payung, rambut pirangnya basah kuyup menempel di dahi, namun senyumnya tetap secerah matahari musim panas. Di tangannya, ia menggenggam pelindung dahi tergores milik Sasuke yang selama ini ia jaga dengan nyawanya."
-                        ]
-                    },
-                    {
-                        title: "Bab 2: Secangkir Teh Hangat",
-                        content: [
-                            "Apartemen Hokage terasa jauh lebih rapi daripada kenangan masa kecil mereka. Sasuke duduk di tepi futon, membiarkan handuk hangat tersampir di bahunya.",
-                            "\"Aku sudah membelikan tomat segar tadi pagi,\" ujar Naruto sambil meletakkan dua cangkir teh hijau di meja rendah. \"Entah kenapa, firasatku mengatakan kau akan pulang hari ini.\"",
-                            "Sasuke menatap uap tipis yang mengepul dari cangkir itu. Untuk pertama kalinya dalam satu dekade, rasa dingin di dadanya perlahan mencair."
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 2,
-                title: "Orbit Kopi dan Toko Roti",
-                author: "@KafeKonoha",
-                words: "3.150 Kata",
-                rating: "General",
-                tags: ["Fluff"],
-                synopsis: "Modern AU: Sasuke adalah arsitek perfeksionis yang selalu memesan kopi hitam pukul 07.00 pagi, dan Naruto adalah barista ceroboh yang diam-diam menggambar bulan sabit di atas latte-nya.",
-                chapters: [
-                    {
-                        title: "Bab 1: Pesanan Pukul Tujuh",
-                        content: [
-                            "Bel pintu kafe berdenting tepat pukul 07.00 pagi. Naruto tidak perlu menoleh untuk tahu siapa yang baru saja melangkah masuk dengan mantel panjang berwarna biru gelap.",
-                            "\"Satu Americano panas tanpa gula, benar kan, Sasuke?\" seru Naruto penuh semangat dari balik mesin espresso.",
-                            "Sasuke hanya mengangguk tipis, namun sudut bibirnya terangkat nyaris tak terlihat saat menerima gelas kertas yang memiliki gambar kecil matahari dan bulan di samping namanya."
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 3,
-                title: "Putaran Waktu: Kembali ke Tim 7",
-                author: "@ChronoSharingan",
-                words: "6.400 Kata",
-                rating: "Teen",
-                tags: ["Time Travel", "Hurt/Comfort"],
-                synopsis: "Sebuah segel kuno melempar kesadaran Sasuke dan Naruto dewasa kembali ke tubuh mereka yang berusia dua belas tahun—tepat sehari sebelum ujian lonceng Kakashi.",
-                chapters: [
-                    {
-                        title: "Bab 1: Cermin Masa Lalu",
-                        content: [
-                            "Sasuke terbangun dengan napas memburu, menatap kedua tangannya yang utuh dan berukuran jauh lebih kecil. Tidak ada Rinnegan. Tidak ada bekas luka di Lembah Akhir.",
-                            "Belum sempat ia mencerna keadaan, pintu jendela kamarnya diketuk dengan ritme khas yang hanya diketahui oleh satu orang di seluruh dunia.",
-                            "Di luar jendela, Naruto kecil menatapnya dengan mata biru tua yang menyimpan kebijaksanaan seorang Hokage. \"Jadi... kau juga mengingat semuanya, Sasuke?\""
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 4,
-                title: "Catatan dari Perjalanan Dimensi",
-                author: "@ElangBiru",
-                words: "2.900 Kata",
-                rating: "General",
-                tags: ["Fluff", "Hurt/Comfort"],
-                synopsis: "Kumpulan surat singkat yang dikirimkan Sasuke melalui elang pemanggilnya setiap kali ia merindukan keramaian kedai Ichiraku Ramen.",
-                chapters: [
-                    {
-                        title: "Surat Pertama: Gurun Pasir",
-                        content: [
-                            "Untuk Dobe, malam di dimensi ini memiliki dua bulan, namun tidak satu pun yang bersinar sehangat matahari di Konoha. Aku akan kembali sebelum musim gugur berakhir. Jangan makan ramen instan terlalu banyak."
-                        ]
-                    }
-                ]
-            }
-        ];
+  <script>
+    /* =========================================================================
+       === AREA ADMIN: KELOLA DATA KARYA DI SINI (EDIT BAGIAN INI SAJA) ===
+       ========================================================================= */
 
-        const contributorData = [
-            {
-                name: "TsukiKitsune",
-                role: "Head Artist & Zine Illustrator",
-                badge: "Ilustrator",
-                badgeColor: "bg-indigo-500/20 text-indigo-300",
-                bio: "Menggambar SasuNaru sejak 2015. Spesialis pencahayaan dramatis bertema malam dan mitologi.",
-                featured: "Gerhana di Lembah Akhir",
-                handle: "@TsukiKitsune_Art"
-            },
-            {
-                name: "LangitSenja",
-                role: "Lead Writer & Fic Editor",
-                badge: "Penulis",
-                badgeColor: "bg-amber-500/20 text-amber-300",
-                bio: "Pecinta kisah slow-burn, angst dengan akhir bahagia, dan dinamika canon pasca-perang.",
-                featured: "Di Bawah Langit Tanpa Bulan",
-                handle: "@LangitSenja_Fic"
-            },
-            {
-                name: "MochiDango",
-                role: "Merch Designer & Chibi Artist",
-                badge: "Merch & Chibi",
-                badgeColor: "bg-purple-500/20 text-purple-300",
-                bio: "Merancang stiker, matching icons, dan pembatas buku gemas untuk acara komunitas.",
-                featured: "Paket Wallpaper Yin & Yang",
-                handle: "@MochiDango"
-            },
-            {
-                name: "AkatsukiMod_ID",
-                role: "Event Organizer & Web Mod",
-                badge: "Moderator",
-                badgeColor: "bg-orange-500/20 text-orange-300",
-                bio: "Menjaga harmoni festival dan meracik mini-game interaktif untuk seluruh peserta.",
-                featured: "SasuNaru Eclipse Fest 2026",
-                handle: "@SNFest_ID"
-            }
-        ];
+    // 1. DATA FANART
+    // Upload gambar ke folder "images/" di GitHub, lalu tulis path-nya di "image"
+    const FANARTS = [
+      {
+        id: "art-1",
+        title: "Valley of the End: Under the Eclipse",
+        artist: "@moonlight_ink",
+        category: "canon",
+        image: "images/fanart1.jpg", // Ganti dengan nama file yang kamu upload ke folder images/
+        likes: 42
+      },
+      {
+        id: "art-2",
+        title: "Late Night Ramen & Rooftop",
+        artist: "@sunbeam_draws",
+        category: "modern",
+        image: "images/fanart2.jpg",
+        likes: 38
+      },
+      {
+        id: "art-3",
+        title: "Chibi Sun & Moon Plushies",
+        artist: "@konoha_doodles",
+        category: "chibi",
+        image: "images/fanart3.jpg",
+        likes: 55
+      }
+    ];
 
-        // --- 2. FUNGSI NOTIFIKASI TOAST ---
-        let toastTimeout;
-        function showToast(message, iconClass = "fa-sparkles") {
-            const toast = document.getElementById('toastNotification');
-            const msgEl = document.getElementById('toastMessage');
-            const iconEl = document.getElementById('toastIcon');
-            
-            msgEl.textContent = message;
-            iconEl.className = `fa-solid ${iconClass} text-amber-400 text-lg`;
-            
-            toast.classList.remove('translate-y-24', 'opacity-0');
-            clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => {
-                toast.classList.add('translate-y-24', 'opacity-0');
-            }, 3200);
+    // 2. DATA FANFIC (MODE PREVIEW + LINK EKSTERNAL KE AO3 / WATTPAD)
+    const FANFICS = [
+      {
+        id: "fic-1",
+        title: "Where the Sun Meets the Shadow",
+        author: "@uchiha_scribe",
+        genre: "angst",
+        rating: "T",
+        words: "6.200 kata",
+        preview: "Hujan turun tanpa henti di Lembah Akhir malam itu. Sasuke menatap langit yang perlahan menggelap saat gerhana mulai menutupi cahaya bulan.\n\n\"Kau selalu datang terlambat, Dobe,\" gumamnya pelan, meski sudut bibirnya terangkat tipis saat merasakan chakra hangat yang sangat ia kenal mendekat dari balik kabut.",
+        platform: "AO3",
+        link: "https://archiveofourown.org/" // Ganti dengan link cerita lengkap
+      },
+      {
+        id: "fic-2",
+        title: "Two Bowls of Miso & One Umbrella",
+        author: "@uzumaki_tales",
+        genre: "fluff",
+        rating: "G",
+        words: "2.800 kata",
+        preview: "Apartemen kecil Naruto di pusat kota Tokyo selalu berantakan setiap akhir pekan, kecuali di hari Minggu pagi ketika Sasuke datang membawa sekantong tomat segar dan bahan sarapan.\n\n\"Jangan taruh jaket basahmu di atas sofa lagi, Naruto,\" tegur Sasuke sambil menyodorkan handuk kering.",
+        platform: "Wattpad",
+        link: "https://www.wattpad.com/"
+      },
+      {
+        id: "fic-3",
+        title: "After the Storm Clears",
+        author: "@eclipse_quill",
+        genre: "hurt-comfort",
+        rating: "T",
+        words: "4.500 kata",
+        preview: "Misi pengintaian di perbatasan Negara Api menyisakan luka bakar di bahu kiri Sasuke. Naruto menolak beranjak dari sisi ranjang klinik sepanjang malam, memastikan sahabat sekaligus belahan jiwanya itu benar-benar pulih.",
+        platform: "AO3",
+        link: "https://archiveofourown.org/"
+      }
+    ];
+
+    // 3. DATA DIGITAL MERCH
+    // Upload file resolusi tinggi ke folder "images/" agar bisa langsung di-download peserta
+    const MERCH = [
+      {
+        title: "Eclipse Dual Wallpaper (HP & Desktop)",
+        creator: "@moonlight_ink",
+        type: "Wallpaper Pack",
+        file: "images/merch-wallpaper.png"
+      },
+      {
+        title: "SasuNaru Matching Icons (Sun & Moon)",
+        creator: "@konoha_doodles",
+        type: "Icon Set",
+        file: "images/merch-icons.png"
+      },
+      {
+        title: "Printable Bookmark: Red Thread",
+        creator: "@sunbeam_draws",
+        type: "Printable PDF/PNG",
+        file: "images/merch-bookmark.png"
+      }
+    ];
+
+    // 4. DATA CONTRIBUTOR
+    const CONTRIBUTORS = [
+      { name: "Moonlight Ink", handle: "@moonlight_ink", role: "Lead Illustrator & Admin", link: "https://twitter.com" },
+      { name: "Uchiha Scribe", handle: "@uchiha_scribe", role: "Head Writer & Fic Mod", link: "https://archiveofourown.org" },
+      { name: "Sunbeam Draws", handle: "@sunbeam_draws", role: "Merch Designer", link: "https://instagram.com" },
+      { name: "Konoha Doodles", handle: "@konoha_doodles", role: "Chibi Artist & Event Host", link: "https://twitter.com" }
+    ];
+
+    /* =========================================================================
+       === AKHIR AREA ADMIN (KODE SISTEM DI BAWAH TIDAK PERLU DIUBAH) ===
+       ========================================================================= */
+
+    // Fallback SVG otomatis jika file di folder images/ belum di-upload admin
+    function getFallbackSVG(label, theme = "dual") {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">
+        <defs>
+          <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#311042"/>
+            <stop offset="50%" stop-color="#1e1b4b"/>
+            <stop offset="100%" stop-color="#7c2d12"/>
+          </linearGradient>
+        </defs>
+        <rect width="600" height="450" fill="url(#g)"/>
+        <circle cx="255" cy="195" r="55" fill="#8b5cf6" opacity="0.85"/>
+        <circle cx="345" cy="195" r="55" fill="#f97316" opacity="0.85"/>
+        <text x="300" y="305" fill="#f8fafc" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle">${label}</text>
+        <text x="300" y="335" fill="#cbd5e1" font-family="sans-serif" font-size="13" text-anchor="middle">(Upload gambar ke folder images/ di GitHub)</text>
+      </svg>`;
+      return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+    }
+
+    // RENDER FANART
+    function renderFanarts(filter = "all") {
+      const grid = document.getElementById("fanartGrid");
+      const likedIds = JSON.parse(localStorage.getItem("sn_likes") || "[]");
+      grid.innerHTML = "";
+
+      FANARTS.filter(item => filter === "all" || item.category === filter).forEach(art => {
+        const isLiked = likedIds.includes(art.id);
+        const count = art.likes + (isLiked ? 1 : 0);
+        const fallback = getFallbackSVG(art.title);
+
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img src="${art.image}" alt="${art.title}" class="art-thumb"
+               onerror="this.onerror=null; this.src='${fallback}';"
+               onclick="openArtModal('${art.title.replace(/'/g, "\\'")}', '${art.artist}', '${art.image}', '${fallback}')">
+          <div class="card-body">
+            <div>
+              <span class="tag tag-purple">${art.category}</span>
+              <h3 class="card-title">${art.title}</h3>
+              <p class="card-meta">Oleh ${art.artist}</p>
+            </div>
+            <div class="card-footer">
+              <button class="like-btn ${isLiked ? 'liked' : ''}" onclick="toggleLike('${art.id}', '${filter}')">
+                ♥ <span>${count}</span>
+              </button>
+              <button class="filter-btn" onclick="openArtModal('${art.title.replace(/'/g, "\\'")}', '${art.artist}', '${art.image}', '${fallback}')">Perbesar</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function toggleLike(id, currentFilter) {
+      let likedIds = JSON.parse(localStorage.getItem("sn_likes") || "[]");
+      if (likedIds.includes(id)) {
+        likedIds = likedIds.filter(item => item !== id);
+      } else {
+        likedIds.push(id);
+      }
+      localStorage.setItem("sn_likes", JSON.stringify(likedIds));
+      renderFanarts(currentFilter);
+    }
+
+    // RENDER FANFIC (PREVIEW ONLY)
+    function renderFanfics(filter = "all") {
+      const grid = document.getElementById("fanficGrid");
+      grid.innerHTML = "";
+
+      FANFICS.filter(fic => filter === "all" || fic.genre === filter).forEach((fic, index) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="card-body">
+            <div>
+              <span class="tag tag-orange">${fic.genre} • Rating ${fic.rating}</span>
+              <h3 class="card-title">${fic.title}</h3>
+              <p class="card-meta">Oleh ${fic.author}</p>
+              <p class="fic-stats">📖 ${fic.words} • Tersedia di ${fic.platform}</p>
+              <p class="fic-excerpt">"${fic.preview}"</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-outline" style="padding: 0.45rem 0.9rem; font-size:0.85rem;" onclick="openFicModal(${index})">Baca Preview</button>
+              <a href="${fic.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.45rem 0.9rem; font-size:0.85rem;">${fic.platform} ↗</a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // RENDER MERCH
+    function renderMerch() {
+      const grid = document.getElementById("merchGrid");
+      MERCH.forEach(item => {
+        const fallback = getFallbackSVG(item.title);
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img src="${item.file}" alt="${item.title}" class="merch-preview"
+               onerror="this.onerror=null; this.src='${fallback}';">
+          <div class="card-body">
+            <div>
+              <span class="tag tag-purple">${item.type}</span>
+              <h3 class="card-title">${item.title}</h3>
+              <p class="card-meta">Desain oleh ${item.creator}</p>
+            </div>
+            <div class="card-footer">
+              <a href="${item.file}" download class="btn btn-primary" style="width:100%; justify-content:center;">⬇ Unduh Gratis</a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // RENDER CONTRIBUTORS
+    function renderContributors() {
+      const grid = document.getElementById("contribGrid");
+      CONTRIBUTORS.forEach(c => {
+        const initials = c.name.split(" ").map(n => n[0]).join("").slice(0, 2).toUpperCase();
+        const card = document.createElement("div");
+        card.className = "card contrib-card";
+        card.innerHTML = `
+          <div class="avatar">${initials}</div>
+          <h3 class="card-title">${c.name}</h3>
+          <p style="color:var(--naruto-gold); font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">${c.role}</p>
+          <p class="card-meta">${c.handle}</p>
+          <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:0.5rem; justify-content:center;">Kunjungi Profil ↗</a>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // MODALS
+    function openArtModal(title, artist, imgSrc, fallback) {
+      const body = document.getElementById("modalBody");
+      body.innerHTML = `
+        <img src="${imgSrc}" alt="${title}" class="modal-img" onerror="this.onerror=null; this.src='${fallback}';">
+        <h3 class="card-title" style="font-size:1.4rem;">${title}</h3>
+        <p class="card-meta">Ilustrasi oleh <strong>${artist}</strong></p>
+      `;
+      document.getElementById("previewModal").classList.add("open");
+    }
+
+    function openFicModal(index) {
+      const fic = FANFICS[index];
+      const body = document.getElementById("modalBody");
+      body.innerHTML = `
+        <span class="tag tag-orange">${fic.genre} • Rating ${fic.rating} • ${fic.words}</span>
+        <h3 class="card-title" style="font-size:1.5rem; margin-top:0.4rem;">${fic.title}</h3>
+        <p class="card-meta">Ditulis oleh <strong>${fic.author}</strong></p>
+        <div class="preview-box">${fic.preview}</div>
+        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:1.2rem;">Ingin membaca kelanjutan ceritanya? Klik tombol di bawah untuk menuju halaman resmi karya ini.</p>
+        <a href="${fic.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%; justify-content:center;">
+          Baca Selengkapnya di ${fic.platform} ↗
+        </a>
+      `;
+      document.getElementById("previewModal").classList.add("open");
+    }
+
+    function closeModal(e) {
+      if (e.target.id === "previewModal") forceCloseModal();
+    }
+
+    function forceCloseModal() {
+      document.getElementById("previewModal").classList.remove("open");
+    }
+
+    // FILTER BUTTON HANDLERS
+    document.querySelectorAll("#artFilters .filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#artFilters .filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderFanarts(btn.dataset.filter);
+      });
+    });
+
+    document.querySelectorAll("#ficFilters .filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#ficFilters .filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderFanfics(btn.dataset.filter);
+      });
+    });
+
+    // GAME SWITCHER
+    function switchGame(gameName, btn) {
+      document.querySelectorAll(".game-tabs .filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      document.querySelectorAll(".game-panel").forEach(p => p.classList.remove("active"));
+      document.getElementById("game-" + gameName).classList.add("active");
+    }
+
+    // === MINI GAME 1: MEMORY MATCH ===
+    const symbols = ["☀️", "🌙", "🍜", "🍅", "🦊", "⚡"];
+    let cards = [], flipped = [], matchedCount = 0, moves = 0, lockBoard = false;
+
+    function initMemoryGame() {
+      cards = [...symbols, ...symbols].sort(() => Math.random() - 0.5);
+      flipped = [];
+      matchedCount = 0;
+      moves = 0;
+      lockBoard = false;
+      document.getElementById("memMoves").textContent = "0";
+      document.getElementById("memPairs").textContent = "0/6";
+
+      const grid = document.getElementById("memoryGrid");
+      grid.innerHTML = "";
+      cards.forEach((sym, idx) => {
+        const el = document.createElement("div");
+        el.className = "mem-card";
+        el.dataset.symbol = sym;
+        el.dataset.index = idx;
+        el.textContent = "✦";
+        el.onclick = () => flipCard(el);
+        grid.appendChild(el);
+      });
+    }
+
+    function flipCard(el) {
+      if (lockBoard || el.classList.contains("flipped") || el.classList.contains("matched")) return;
+      el.classList.add("flipped");
+      el.textContent = el.dataset.symbol;
+      flipped.push(el);
+
+      if (flipped.length === 2) {
+        moves++;
+        document.getElementById("memMoves").textContent = moves;
+        lockBoard = true;
+        const [c1, c2] = flipped;
+        if (c1.dataset.symbol === c2.dataset.symbol) {
+          c1.classList.add("matched");
+          c2.classList.add("matched");
+          matchedCount++;
+          document.getElementById("memPairs").textContent = `${matchedCount}/6`;
+          flipped = [];
+          lockBoard = false;
+        } else {
+          setTimeout(() => {
+            c1.classList.remove("flipped");
+            c2.classList.remove("flipped");
+            c1.textContent = "✦";
+            c2.textContent = "✦";
+            flipped = [];
+            lockBoard = false;
+          }, 700);
         }
+      }
+    }
 
-        // --- 3. MENU MOBILE & COUNTDOWN ---
-        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
+    // === MINI GAME 2: TRIVIA ===
+    const questions = [
+      {
+        q: "Simbol apa yang diberikan Hagoromo Otsutsuki di telapak tangan Naruto dan Sasuke?",
+        opts: ["Api dan Angin", "Matahari (Yang) dan Bulan Sabit (Yin)", "Naga dan Harimau"],
+        ans: 1
+      },
+      {
+        q: "Apa makanan favorit Sasuke dan Naruto yang paling ikonik?",
+        opts: ["Onigiri & Dango", "Tomat & Ramen Ichiraku", "Sushi & Kari"],
+        ans: 1
+      },
+      {
+        q: "Di lokasi ikonik mana pertarungan penutup Naruto dan Sasuke terjadi?",
+        opts: ["Lembah Akhir (Valley of the End)", "Jembatan Kannabi", "Atap Rumah Sakit Konoha"],
+        ans: 0
+      }
+    ];
+    let qIdx = 0, qScore = 0;
+
+    function renderQuiz() {
+      const box = document.getElementById("quizContainer");
+      if (qIdx >= questions.length) {
+        box.innerHTML = `
+          <h4 style="font-size:1.3rem; margin:1rem 0;">Kuis Selesai! 🎉</h4>
+          <p>Skor kamu: <strong>${qScore} dari ${questions.length}</strong></p>
+          <button class="btn btn-primary" style="margin-top:1rem;" onclick="resetQuiz()">Ulangi Kuis</button>
+        `;
+        return;
+      }
+      const curr = questions[qIdx];
+      box.innerHTML = `
+        <p style="color:var(--naruto-gold); font-size:0.85rem; margin-bottom:0.5rem;">Pertanyaan ${qIdx + 1} / ${questions.length}</p>
+        <h4 style="font-size:1.1rem;">${curr.q}</h4>
+        <div class="quiz-options">
+          ${curr.opts.map((opt, i) => `<button class="quiz-opt" onclick="answerQuiz(${i})">${opt}</button>`).join("")}
+        </div>
+      `;
+    }
+
+    function answerQuiz(choice) {
+      if (choice === questions[qIdx].ans) qScore++;
+      qIdx++;
+      renderQuiz();
+    }
+
+    function resetQuiz() {
+      qIdx = 0;
+      qScore = 0;
+      renderQuiz();
+    }
+
+    // === MINI GAME 3: CATCH RAMEN & TOMATO ===
+    const canvas = document.getElementById("catchCanvas");
+    const ctx = canvas.getContext("2d");
+    let playerX = 180, catchScore = 0, catchLives = 3, items = [], catchRunning = false, animId;
+
+    function startCatchGame() {
+      playerX = 180;
+      catchScore = 0;
+      catchLives = 3;
+      items = [];
+      catchRunning = true;
+      document.getElementById("catchScore").textContent = "0";
+      document.getElementById("catchLives").textContent = "3";
+      cancelAnimationFrame(animId);
+      gameLoop();
+    }
+
+    canvas.addEventListener("mousemove", e => {
+      const rect = canvas.getBoundingClientRect();
+      playerX = ((e.clientX - rect.left) / rect.width) * canvas.width - 30;
+    });
+
+    canvas.addEventListener("touchmove", e => {
+      const rect = canvas.getBoundingClientRect();
+      playerX = ((e.touches[0].clientX - rect.left) / rect.width) * canvas.width - 30;
+    }, { passive: true });
+
+    window.addEventListener("keydown", e => {
+      if (e.key === "ArrowLeft") playerX -= 25;
+      if (e.key === "ArrowRight") playerX += 25;
+    });
+
+    function gameLoop() {
+      if (!catchRunning) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Batasi posisi keranjang
+      playerX = Math.max(0, Math.min(canvas.width - 60, playerX));
+
+      // Gambar Keranjang
+      ctx.fillStyle = "#f97316";
+      ctx.fillRect(playerX, canvas.height - 28, 60, 18);
+      ctx.font = "14px sans-serif";
+      ctx.fillStyle = "#fff";
+      ctx.fillText("☀️🌙", playerX + 12, canvas.height - 14);
+
+      // Spawn item jatuh
+      if (Math.random() < 0.035) {
+        const pool = ["🍜", "🍅", "🍜", "🍅", "⚡"];
+        items.push({
+          x: Math.random() * (canvas.width - 24),
+          y: 0,
+          type: pool[Math.floor(Math.random() * pool.length)],
+          speed: 2.2 + Math.random() * 1.8
         });
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobileMenu').classList.add('hidden');
-            });
-        });
+      }
 
-        // Hitung mundur dinamis (7 hari dari sekarang)
-        const targetDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000) + (14 * 3600 * 1000);
-        setInterval(() => {
-            const now = new Date().getTime();
-            const diff = Math.max(0, targetDate - now);
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
+      ctx.font = "22px sans-serif";
+      for (let i = items.length - 1; i >= 0; i--) {
+        const it = items[i];
+        it.y += it.speed;
+        ctx.fillText(it.type, it.x, it.y);
 
-            document.getElementById('cd-days').textContent = String(d).padStart(2, '0');
-            document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
-            document.getElementById('cd-minutes').textContent = String(m).padStart(2, '0');
-            document.getElementById('cd-seconds').textContent = String(s).padStart(2, '0');
-        }, 1000);
-
-        // --- 4. RENDER & INTERAKSI FANART ---
-        let currentArtFilter = 'all';
-
-        function renderFanart() {
-            const grid = document.getElementById('fanartGrid');
-            const filtered = currentArtFilter === 'all' 
-                ? fanartData 
-                : fanartData.filter(item => item.category === currentArtFilter);
-
-            grid.innerHTML = filtered.map(art => `
-                <div class="glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col group">
-                    <div onclick="openFanartModal(${art.id})" class="relative h-56 overflow-hidden cursor-pointer bg-slate-950">
-                        <div class="w-full h-full transform group-hover:scale-105 transition-transform duration-500">
-                            ${art.svg}
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
-                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-slate-950/80 backdrop-blur-md text-indigo-300 border border-white/10">
-                            ${art.category}
-                        </span>
-                        <div class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition">
-                            <i class="fa-solid fa-expand text-xs"></i>
-                        </div>
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 onclick="openFanartModal(${art.id})" class="text-lg font-bold text-white hover:text-amber-300 cursor-pointer transition">${art.title}</h3>
-                            <p class="text-xs text-indigo-300 font-medium mt-0.5">${art.artist}</p>
-                            <p class="text-slate-400 text-xs mt-2.5 line-clamp-2">${art.desc}</p>
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
-                            <button onclick="openFanartModal(${art.id})" class="text-xs font-semibold text-slate-300 hover:text-white transition">
-                                Lihat Detail →
-                            </button>
-                            <button onclick="toggleLikeArt(${art.id})" class="px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition ${art.liked ? 'bg-rose-500 text-white shadow-lg shadow-rose-500/30' : 'bg-white/5 text-slate-300 hover:bg-white/10'}">
-                                <i class="fa-solid fa-heart"></i> <span>${art.likes}</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
+        // Cek tertangkap
+        if (it.y > canvas.height - 34 && it.x > playerX - 15 && it.x < playerX + 55) {
+          if (it.type === "⚡") {
+            catchLives--;
+            document.getElementById("catchLives").textContent = catchLives;
+          } else {
+            catchScore += 10;
+            document.getElementById("catchScore").textContent = catchScore;
+          }
+          items.splice(i, 1);
+          if (catchLives <= 0) {
+            catchRunning = false;
+            ctx.fillStyle = "rgba(8, 9, 18, 0.85)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#fbbf24";
+            ctx.font = "bold 20px sans-serif";
+            ctx.fillText("Game Over! Skor Akhir: " + catchScore, 85, 160);
+            return;
+          }
+        } else if (it.y > canvas.height) {
+          items.splice(i, 1);
         }
-
-        function toggleLikeArt(id) {
-            const item = fanartData.find(a => a.id === id);
-            if (!item) return;
-            item.liked = !item.liked;
-            item.likes += item.liked ? 1 : -1;
-            renderFanart();
-            if (item.liked) {
-                showToast(`Kamu menyukai "${item.title}"!`, "fa-heart");
-            }
-            // Perbarui modal jika sedang terbuka
-            const modal = document.getElementById('fanartModal');
-            if (!modal.classList.contains('hidden')) {
-                document.getElementById('modalArtLikesCount').textContent = item.likes;
-            }
-        }
-
-        document.querySelectorAll('.fanart-filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.fanart-filter-btn').forEach(b => {
-                    b.classList.remove('active', 'bg-gradient-to-r', 'from-indigo-600', 'to-orange-500', 'text-white');
-                    b.classList.add('glass-card', 'text-slate-300');
-                });
-                btn.classList.add('active', 'bg-gradient-to-r', 'from-indigo-600', 'to-orange-500', 'text-white');
-                btn.classList.remove('glass-card', 'text-slate-300');
-                currentArtFilter = btn.dataset.filter;
-                renderFanart();
-            });
-        });
-
-        function openFanartModal(id) {
-            const art = fanartData.find(a => a.id === id);
-            if (!art) return;
-            document.getElementById('modalArtCategory').textContent = art.category;
-            document.getElementById('modalArtTitle').textContent = art.title;
-            document.getElementById('modalArtCanvas').innerHTML = art.svg;
-            document.getElementById('modalArtDesc').textContent = art.desc;
-            document.getElementById('modalArtArtist').textContent = `Ilustrasi oleh ${art.artist}`;
-            document.getElementById('modalArtLikesCount').textContent = art.likes;
-            
-            const likeBtn = document.getElementById('modalArtLikeBtn');
-            likeBtn.onclick = () => toggleLikeArt(art.id);
-
-            const modal = document.getElementById('fanartModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeFanartModal() {
-            const modal = document.getElementById('fanartModal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        // --- 5. RENDER & PEMBACA CEPAT FANFIC ---
-        let currentFicTag = 'all';
-
-        function renderFanfic() {
-            const list = document.getElementById('fanficList');
-            const filtered = currentFicTag === 'all'
-                ? fanficData
-                : fanficData.filter(f => f.tags.includes(currentFicTag));
-
-            list.innerHTML = filtered.map(fic => `
-                <div class="glass-card glass-card-hover rounded-3xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">${fic.rating}</span>
-                                ${fic.tags.map(t => `<span class="px-2.5 py-0.5 rounded-md text-[11px] font-medium bg-indigo-500/20 text-indigo-300">${t}</span>`).join('')}
-                            </div>
-                            <span class="text-xs text-slate-400 font-mono"><i class="fa-regular fa-file-lines mr-1"></i>${fic.words}</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-1">${fic.title}</h3>
-                        <p class="text-xs text-orange-300 font-semibold mb-3">Oleh ${fic.author}</p>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">${fic.synopsis}</p>
-                    </div>
-                    <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-xs text-slate-400">${fic.chapters.length} Bab Tersedia</span>
-                        <button onclick="openFanficModal(${fic.id})" class="px-5 py-2.5 rounded-xl font-bold text-xs bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:opacity-90 shadow-lg shadow-orange-600/20 transition flex items-center gap-2">
-                            <i class="fa-solid fa-book-open"></i> Baca Cepat
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        document.querySelectorAll('.fanfic-filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.fanfic-filter-btn').forEach(b => {
-                    b.classList.remove('active', 'bg-gradient-to-r', 'from-amber-500', 'to-orange-600', 'text-white');
-                    b.classList.add('glass-card', 'text-slate-300');
-                });
-                btn.classList.add('active', 'bg-gradient-to-r', 'from-amber-500', 'to-orange-600', 'text-white');
-                btn.classList.remove('glass-card', 'text-slate-300');
-                currentFicTag = btn.dataset.tag;
-                renderFanfic();
-            });
-        });
-
-        function openFanficModal(id) {
-            const fic = fanficData.find(f => f.id === id);
-            if (!fic) return;
-
-            document.getElementById('ffModalRating').textContent = fic.rating;
-            document.getElementById('ffModalWords').textContent = fic.words;
-            document.getElementById('ffModalTitle').textContent = fic.title;
-            document.getElementById('ffModalAuthor').textContent = `Ditulis oleh ${fic.author}`;
-
-            const tabsContainer = document.getElementById('ffChapterTabs');
-            tabsContainer.innerHTML = fic.chapters.map((ch, idx) => `
-                <button onclick="selectFicChapter(${fic.id}, ${idx})" class="ff-ch-btn px-3.5 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition ${idx === 0 ? 'bg-amber-500 text-slate-950' : 'bg-white/10 text-slate-300 hover:bg-white/20'}">
-                    ${ch.title}
-                </button>
-            `).join('');
-
-            selectFicChapter(fic.id, 0);
-            const modal = document.getElementById('fanficModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function selectFicChapter(ficId, chIdx) {
-            const fic = fanficData.find(f => f.id === ficId);
-            const chapter = fic.chapters[chIdx];
-            
-            document.querySelectorAll('.ff-ch-btn').forEach((btn, idx) => {
-                if (idx === chIdx) {
-                    btn.className = "ff-ch-btn px-3.5 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition bg-amber-500 text-slate-950";
-                } else {
-                    btn.className = "ff-ch-btn px-3.5 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition bg-white/10 text-slate-300 hover:bg-white/20";
-                }
-            });
-
-            const body = document.getElementById('ffModalBody');
-            body.innerHTML = `
-                <h4 class="font-display text-xl font-bold text-amber-300 mb-4">${chapter.title}</h4>
-                ${chapter.content.map(p => `<p class="indent-6 text-slate-200">${p}</p>`).join('')}
-                <div class="pt-6 mt-6 border-t border-white/10 text-center text-xs text-slate-400">
-                    — Akhir Cuplikan ${chapter.title} • SasuNaru Eclipse Fest 2026 —
-                </div>
-            `;
-            body.scrollTop = 0;
-        }
-
-        function closeFanficModal() {
-            const modal = document.getElementById('fanficModal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        // --- 6. UNDUHAN DIGITAL MERCH (GENERATE PNG OTOMATIS VIA CANVAS) ---
-        function downloadMerch(type) {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-
-            if (type === 'wallpaper') {
-                canvas.width = 1080;
-                canvas.height = 1920;
-                const grad = ctx.createLinearGradient(0, 0, 1080, 1920);
-                grad.addColorStop(0, '#090914');
-                grad.addColorStop(0.5, '#2e1065');
-                grad.addColorStop(1, '#9a3412');
-                ctx.fillStyle = grad;
-                ctx.fillRect(0, 0, 1080, 1920);
-
-                // Lingkaran Gerhana
-                ctx.beginPath();
-                ctx.arc(540, 860, 260, 0, Math.PI * 2);
-                ctx.strokeStyle = '#fbbf24';
-                ctx.lineWidth = 10;
-                ctx.stroke();
-
-                ctx.fillStyle = '#ffffff';
-                ctx.font = 'bold 54px sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillText('SASUNARU ECLIPSE 2026', 540, 1260);
-                ctx.fillStyle = '#fcd34d';
-                ctx.font = '32px sans-serif';
-                ctx.fillText('SUN & MOON HARMONY', 540, 1320);
-
-                triggerCanvasDownload(canvas, 'SasuNaru_Eclipse_Wallpaper_2026.png');
-                showToast("Wallpaper HD berhasil dibuat & diunduh!", "fa-download");
-            } else if (type === 'icons') {
-                canvas.width = 1000;
-                canvas.height = 500;
-                ctx.fillStyle = '#090914';
-                ctx.fillRect(0, 0, 1000, 500);
-
-                // Kiri (Sasuke)
-                ctx.beginPath();
-                ctx.arc(250, 250, 180, 0, Math.PI * 2);
-                ctx.fillStyle = '#312e81';
-                ctx.fill();
-                ctx.fillStyle = '#c4b5fd';
-                ctx.font = 'bold 120px sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillText('☾', 250, 290);
-
-                // Kanan (Naruto)
-                ctx.beginPath();
-                ctx.arc(750, 250, 180, 0, Math.PI * 2);
-                ctx.fillStyle = '#9a3412';
-                ctx.fill();
-                ctx.fillStyle = '#fbbf24';
-                ctx.fillText('☀', 750, 290);
-
-                triggerCanvasDownload(canvas, 'SasuNaru_Matching_Icons_Set.png');
-                showToast("Paket Matching Icons berhasil diunduh!", "fa-user-group");
-            } else {
-                canvas.width = 600;
-                canvas.height = 1600;
-                const grad = ctx.createLinearGradient(0, 0, 0, 1600);
-                grad.addColorStop(0, '#1e1b4b');
-                grad.addColorStop(0.5, '#581c87');
-                grad.addColorStop(1, '#ea580c');
-                ctx.fillStyle = grad;
-                ctx.fillRect(0, 0, 600, 1600);
-
-                ctx.strokeStyle = '#fbbf24';
-                ctx.lineWidth = 8;
-                ctx.strokeRect(30, 30, 540, 1540);
-
-                ctx.fillStyle = '#ffffff';
-                ctx.font = 'bold 42px sans-serif';
-                ctx.textAlign = 'center';
-                ctx.fillText('☾  ✦  ☀', 300, 680);
-                ctx.fillText('ALWAYS MY FRIEND', 300, 780);
-                ctx.font = '26px sans-serif';
-                ctx.fillStyle = '#fde68a';
-                ctx.fillText('SASUNARU ECLIPSE FEST 2026', 300, 850);
-
-                triggerCanvasDownload(canvas, 'SasuNaru_Bookmark_Printable.png');
-                showToast("Pembatas buku siap cetak berhasil diunduh!", "fa-bookmark");
-            }
-        }
-
-        function triggerCanvasDownload(canvas, filename) {
-            const link = document.createElement('a');
-            link.download = filename;
-            link.href = canvas.toDataURL('image/png');
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        // --- 7. RENDER CONTRIBUTOR ---
-        function renderContributors() {
-            const grid = document.getElementById('contributorGrid');
-            grid.innerHTML = contributorData.map((c, idx) => `
-                <div class="glass-card glass-card-hover rounded-3xl p-6 text-center flex flex-col justify-between">
-                    <div>
-                        <div class="w-20 h-20 mx-auto rounded-full p-1 bg-gradient-to-tr ${idx % 2 === 0 ? 'from-indigo-500 to-purple-500' : 'from-orange-500 to-amber-400'} mb-4">
-                            <div class="w-full h-full rounded-full bg-sasuke-dark flex items-center justify-center font-display font-bold text-2xl text-white">
-                                ${c.name.substring(0, 2).toUpperCase()}
-                            </div>
-                        </div>
-                        <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold ${c.badgeColor} mb-2">${c.badge}</span>
-                        <h3 class="text-lg font-bold text-white">${c.name}</h3>
-                        <p class="text-xs text-slate-400 mb-3">${c.role}</p>
-                        <p class="text-xs text-slate-300 leading-relaxed mb-4">${c.bio}</p>
-                    </div>
-                    <div class="pt-3 border-t border-white/10">
-                        <span class="text-[11px] text-amber-300 block mb-2">Karya: ${c.featured}</span>
-                        <div class="flex justify-center gap-3 text-slate-400">
-                            <button onclick="showToast('Membuka profil ${c.handle}', 'fa-at')" class="hover:text-white transition text-xs font-semibold">
-                                <i class="fa-brands fa-x-twitter mr-1"></i>${c.handle}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // --- 8. NAVIGASI TAB MINI GAMES ---
-        function switchGameTab(tab) {
-            ['memory', 'quiz', 'arcade'].forEach(t => {
-                document.getElementById(`game-${t}`).classList.add('hidden');
-                const btn = document.getElementById(`tab-${t}`);
-                btn.className = "game-tab-btn px-5 py-3 rounded-2xl font-bold text-sm glass-card text-slate-300 hover:text-white transition flex items-center gap-2";
-            });
-
-            document.getElementById(`game-${tab}`).classList.remove('hidden');
-            const activeBtn = document.getElementById(`tab-${tab}`);
-            activeBtn.className = "game-tab-btn px-5 py-3 rounded-2xl font-bold text-sm bg-gradient-to-r from-indigo-600 to-orange-500 text-white shadow-lg transition flex items-center gap-2";
-
-            if (tab !== 'arcade') {
-                arcadeRunning = false;
-            }
-        }
-
-        // --- 9. MINI GAME 1: SASUNARU MEMORY MATCH ---
-        const memorySymbols = [
-            { id: 'sun', icon: '☀️', label: 'Matahari' },
-            { id: 'moon', icon: '🌙', label: 'Bulan' },
-            { id: 'fox', icon: '🦊', label: 'Kurama' },
-            { id: 'hawk', icon: '🦅', label: 'Elang' },
-            { id: 'ramen', icon: '🍜', label: 'Ramen' },
-            { id: 'onigiri', icon: '🍙', label: 'Onigiri' },
-            { id: 'bolt', icon: '⚡', label: 'Chidori' },
-            { id: 'spiral', icon: '🌀', label: 'Rasengan' }
-        ];
-
-        let memCards = [];
-        let flippedCards = [];
-        let matchedPairs = 0;
-        let memMoves = 0;
-        let memSeconds = 0;
-        let memTimerInterval = null;
-        let memLock = false;
-
-        function initMemoryGame() {
-            clearInterval(memTimerInterval);
-            memMoves = 0;
-            memSeconds = 0;
-            matchedPairs = 0;
-            flippedCards = [];
-            memLock = false;
-
-            document.getElementById('mem-moves').textContent = '0';
-            document.getElementById('mem-timer').textContent = '00:00';
-            document.getElementById('memoryWinBanner').classList.add('hidden');
-
-            memCards = [...memorySymbols, ...memorySymbols]
-                .sort(() => Math.random() - 0.5)
-                .map((item, index) => ({ ...item, uid: index }));
-
-            const board = document.getElementById('memoryBoard');
-            board.innerHTML = memCards.map(card => `
-                <div onclick="flipMemoryCard(${card.uid})" id="mem-card-${card.uid}" class="aspect-square perspective-1000 cursor-pointer select-none">
-                    <div class="card-inner w-full h-full relative transform-style-3d">
-                        <!-- Sisi Depan (Tertutup) -->
-                        <div class="backface-hidden absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-900 to-slate-900 border border-indigo-400/30 flex items-center justify-center shadow-md hover:border-amber-400/60 transition">
-                            <span class="text-lg opacity-60">☾☀</span>
-                        </div>
-                        <!-- Sisi Belakang (Terbuka) -->
-                        <div class="backface-hidden rotate-y-180 absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-900/90 to-orange-900/90 border border-amber-400/50 flex flex-col items-center justify-center p-1 shadow-inner">
-                            <span class="text-2xl sm:text-3xl mb-1">${card.icon}</span>
-                            <span class="text-[9px] sm:text-[10px] font-bold text-amber-200">${card.label}</span>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-
-            memTimerInterval = setInterval(() => {
-                memSeconds++;
-                const mins = String(Math.floor(memSeconds / 60)).padStart(2, '0');
-                const secs = String(memSeconds % 60).padStart(2, '0');
-                document.getElementById('mem-timer').textContent = `${mins}:${secs}`;
-            }, 1000);
-        }
-
-        function flipMemoryCard(uid) {
-            if (memLock) return;
-            const cardEl = document.getElementById(`mem-card-${uid}`);
-            const inner = cardEl.querySelector('.card-inner');
-            if (inner.classList.contains('rotate-y-180')) return;
-
-            inner.classList.add('rotate-y-180');
-            const cardData = memCards.find(c => c.uid === uid);
-            flippedCards.push({ uid, cardData, inner });
-
-            if (flippedCards.length === 2) {
-                memMoves++;
-                document.getElementById('mem-moves').textContent = memMoves;
-                memLock = true;
-
-                const [first, second] = flippedCards;
-                if (first.cardData.id === second.cardData.id) {
-                    matchedPairs++;
-                    flippedCards = [];
-                    memLock = false;
-                    if (matchedPairs === memorySymbols.length) {
-                        clearInterval(memTimerInterval);
-                        document.getElementById('memoryWinStats').textContent = `Selesai dalam ${memMoves} langkah dengan waktu ${document.getElementById('mem-timer').textContent}!`;
-                        document.getElementById('memoryWinBanner').classList.remove('hidden');
-                        showToast("Selamat! Kamu memenangkan Memory Match!", "fa-trophy");
-                    }
-                } else {
-                    setTimeout(() => {
-                        first.inner.classList.remove('rotate-y-180');
-                        second.inner.classList.remove('rotate-y-180');
-                        flippedCards = [];
-                        memLock = false;
-                    }, 750);
-                }
-            }
-        }
-
-        // --- 10. MINI GAME 2: KUIS TRIVIA SASUNARU ---
-        const quizQuestions = [
-            {
-                q: "Segel apa yang diberikan Hagoromo Otsutsuki pada telapak tangan kiri Naruto dan telapak tangan kanan Sasuke?",
-                options: [
-                    "Segel Matahari (Yang) untuk Naruto & Segel Bulan Sabit (Yin) untuk Sasuke",
-                    "Segel Api untuk Naruto & Segel Petir untuk Sasuke",
-                    "Segel Bulan untuk Naruto & Segel Matahari untuk Sasuke",
-                    "Segel Langit dan Segel Bumi"
-                ],
-                answer: 0
-            },
-            {
-                q: "Apa makanan favorit Sasuke Uchiha yang sering menjadi kontras dengan kesukaan Naruto terhadap Ramen?",
-                options: [
-                    "Dango manis & Teh hijau",
-                    "Onigiri (nasi kepal) dengan isian okaka dan tomat segar",
-                    "Kari pedas Konoha",
-                    "Takoyaki dan Soba dingin"
-                ],
-                answer: 1
-            },
-            {
-                q: "Di lokasi ikonik manakah pertarungan penentuan mereka di akhir Perang Dunia Shinobi Keempat berlangsung?",
-                options: [
-                    "Atap Rumah Sakit Konoha",
-                    "Jembatan Tenchi",
-                    "Lembah Akhir (Shūmatsu no Tani)",
-                    "Hutan Kematian"
-                ],
-                answer: 2
-            },
-            {
-                q: "Apa nama teknik kombinasi legendaris saat zirah Susanoo milik Sasuke menyelimuti mode Kurama milik Naruto?",
-                options: [
-                    "Iso: Susanoo (Majestic Attire: Susanoo)",
-                    "Amaterasu Rasenshuriken",
-                    "Indra's Arrow",
-                    "Rikudou Chibaku Tensei"
-                ],
-                answer: 0
-            },
-            {
-                q: "Benda apa yang selalu disimpan Naruto selama bertahun-tahun hingga akhirnya dikembalikan kepada Sasuke setelah pertarungan terakhir mereka?",
-                options: [
-                    "Scroll jurus rahasia Uchiha",
-                    "Pelindung dahi (Hitai-ate) Konoha milik Sasuke yang tergores",
-                    "Kunai khusus Minato",
-                    "Foto tim 7 yang sobek"
-                ],
-                answer: 1
-            }
-        ];
-
-        let currentQuizIdx = 0;
-        let quizScore = 0;
-        let quizAnswered = false;
-
-        function initQuizGame() {
-            currentQuizIdx = 0;
-            quizScore = 0;
-            quizAnswered = false;
-            document.getElementById('quizActiveArea').classList.remove('hidden');
-            document.getElementById('quizResultArea').classList.add('hidden');
-            renderQuizQuestion();
-        }
-
-        function renderQuizQuestion() {
-            quizAnswered = false;
-            const item = quizQuestions[currentQuizIdx];
-            document.getElementById('quizProgressText').textContent = `Pertanyaan ${currentQuizIdx + 1} dari ${quizQuestions.length}`;
-            document.getElementById('quizScoreBadge').textContent = `Skor: ${quizScore}`;
-            document.getElementById('quizQuestion').textContent = item.q;
-
-            const optionsEl = document.getElementById('quizOptions');
-            optionsEl.innerHTML = item.options.map((opt, idx) => `
-                <button onclick="answerQuiz(${idx})" id="q-opt-${idx}" class="w-full text-left p-4 rounded-2xl glass-card hover:bg-white/10 border border-white/10 transition flex items-center gap-3 text-sm sm:text-base font-medium text-slate-200">
-                    <span class="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center text-xs font-bold text-amber-300 shrink-0">${String.fromCharCode(65 + idx)}</span>
-                    <span>${opt}</span>
-                </button>
-            `).join('');
-        }
-
-        function answerQuiz(selectedIdx) {
-            if (quizAnswered) return;
-            quizAnswered = true;
-            const item = quizQuestions[currentQuizIdx];
-            const isCorrect = selectedIdx === item.answer;
-
-            if (isCorrect) {
-                quizScore += 20;
-                document.getElementById(`q-opt-${selectedIdx}`).classList.add('border-emerald-400', 'bg-emerald-500/20', 'text-white');
-            } else {
-                document.getElementById(`q-opt-${selectedIdx}`).classList.add('border-rose-500', 'bg-rose-500/20', 'text-white');
-                document.getElementById(`q-opt-${item.answer}`).classList.add('border-emerald-400', 'bg-emerald-500/20', 'text-white');
-            }
-
-            setTimeout(() => {
-                currentQuizIdx++;
-                if (currentQuizIdx < quizQuestions.length) {
-                    renderQuizQuestion();
-                } else {
-                    showQuizResult();
-                }
-            }, 950);
-        }
-
-        function showQuizResult() {
-            document.getElementById('quizActiveArea').classList.add('hidden');
-            document.getElementById('quizResultArea').classList.remove('hidden');
-
-            let rank = "Genin Baru Konoha";
-            if (quizScore === 100) rank = "Pewaris Sejati Rikudou Yin & Yang!";
-            else if (quizScore >= 80) rank = "Penjaga Lembah Akhir";
-            else if (quizScore >= 60) rank = "Rekan Seperjuangan Tim 7";
-
-            document.getElementById('quizRankTitle').textContent = rank;
-            document.getElementById('quizResultDesc').textContent = `Kamu meraih skor ${quizScore} dari 100 poin dalam kuis trivia SasuNaru!`;
-        }
-
-        // --- 11. MINI GAME 3: TANGKAP RAMEN & TOMAT (CANVAS ARKADE) ---
-        const arcadeCanvas = document.getElementById('arcadeCanvas');
-        const arcadeCtx = arcadeCanvas.getContext('2d');
-        let arcadeRunning = false;
-        let arcadeScore = 0;
-        let arcadeLives = 3;
-        let playerX = 0.5; // Rasio 0..1
-        let fallingItems = [];
-        let moveLeft = false;
-        let moveRight = false;
-        let arcadeAnimId = null;
-
-        function resizeArcadeCanvas() {
-            const rect = arcadeCanvas.parentElement.getBoundingClientRect();
-            arcadeCanvas.width = rect.width;
-            arcadeCanvas.height = rect.height;
-        }
-        window.addEventListener('resize', resizeArcadeCanvas);
-
-        function startArcadeGame() {
-            resizeArcadeCanvas();
-            arcadeRunning = true;
-            arcadeScore = 0;
-            arcadeLives = 3;
-            playerX = 0.5;
-            fallingItems = [];
-            document.getElementById('arcadeScore').textContent = '0';
-            document.getElementById('arcadeLives').textContent = '❤️❤️❤️';
-            document.getElementById('arcadeOverlay').classList.add('hidden');
-            cancelAnimationFrame(arcadeAnimId);
-            arcadeLoop();
-        }
-
-        function spawnArcadeItem() {
-            const rand = Math.random();
-            let type = { emoji: '🍜', points: 10, bad: false }; // Ramen Naruto
-            if (rand > 0.72) {
-                type = { emoji: '💣', points: 0, bad: true }; // Kunai Peledak
-            } else if (rand > 0.42) {
-                type = { emoji: Math.random() > 0.5 ? '🍅' : '🍙', points: 15, bad: false }; // Tomat / Onigiri Sasuke
-            }
-
-            fallingItems.push({
-                x: Math.random() * (arcadeCanvas.width - 40) + 20,
-                y: -25,
-                speed: 2.5 + Math.random() * 2.2 + (arcadeScore * 0.01),
-                ...type
-            });
-        }
-
-        function arcadeLoop() {
-            if (!arcadeRunning) return;
-            const w = arcadeCanvas.width;
-            const h = arcadeCanvas.height;
-
-            arcadeCtx.clearRect(0, 0, w, h);
-
-            // Latar belakang halus
-            const bgGrad = arcadeCtx.createLinearGradient(0, 0, w, h);
-            bgGrad.addColorStop(0, '#090914');
-            bgGrad.addColorStop(1, '#1e1b4b');
-            arcadeCtx.fillStyle = bgGrad;
-            arcadeCtx.fillRect(0, 0, w, h);
-
-            // Gerakkan pemain
-            const speed = 0.016;
-            if (moveLeft) playerX = Math.max(0.08, playerX - speed);
-            if (moveRight) playerX = Math.min(0.92, playerX + speed);
-
-            const px = playerX * w;
-            const py = h - 42;
-
-            // Gambar Pemain (Simbol Harmoni Bulan & Matahari)
-            arcadeCtx.save();
-            arcadeCtx.beginPath();
-            arcadeCtx.arc(px, py, 26, 0, Math.PI * 2);
-            const pGrad = arcadeCtx.createLinearGradient(px - 26, py, px + 26, py);
-            pGrad.addColorStop(0, '#4f46e5');
-            pGrad.addColorStop(1, '#f97316');
-            arcadeCtx.fillStyle = pGrad;
-            arcadeCtx.fill();
-            arcadeCtx.lineWidth = 2;
-            arcadeCtx.strokeStyle = '#fbbf24';
-            arcadeCtx.stroke();
-
-            arcadeCtx.font = 'bold 18px sans-serif';
-            arcadeCtx.fillStyle = '#ffffff';
-            arcadeCtx.textAlign = 'center';
-            arcadeCtx.textBaseline = 'middle';
-            arcadeCtx.fillText('☾☀', px, py);
-            arcadeCtx.restore();
-
-            // Munculkan item baru
-            if (Math.random() < 0.032) {
-                spawnArcadeItem();
-            }
-
-            // Update & gambar item jatuh
-            arcadeCtx.font = '28px sans-serif';
-            arcadeCtx.textAlign = 'center';
-            arcadeCtx.textBaseline = 'middle';
-
-            for (let i = fallingItems.length - 1; i >= 0; i--) {
-                const item = fallingItems[i];
-                item.y += item.speed;
-                arcadeCtx.fillText(item.emoji, item.x, item.y);
-
-                // Cek tabrakan dengan pemain
-                const dist = Math.hypot(item.x - px, item.y - py);
-                if (dist < 40) {
-                    if (item.bad) {
-                        arcadeLives--;
-                        document.getElementById('arcadeLives').textContent = '❤️'.repeat(Math.max(0, arcadeLives)) || '💔';
-                        if (arcadeLives <= 0) {
-                            endArcadeGame();
-                            return;
-                        }
-                    } else {
-                        arcadeScore += item.points;
-                        document.getElementById('arcadeScore').textContent = arcadeScore;
-                    }
-                    fallingItems.splice(i, 1);
-                    continue;
-                }
-
-                if (item.y > h + 30) {
-                    fallingItems.splice(i, 1);
-                }
-            }
-
-            arcadeAnimId = requestAnimationFrame(arcadeLoop);
-        }
-
-        function endArcadeGame() {
-            arcadeRunning = false;
-            document.getElementById('arcadeOverlayTitle').textContent = `Permainan Selesai! Skor: ${arcadeScore}`;
-            document.getElementById('arcadeOverlayDesc').textContent = "Ramen dan tomat berhasil dikumpulkan untuk makan malam bersama di Ichiraku!";
-            document.getElementById('arcadeOverlay').classList.remove('hidden');
-        }
-
-        // Kontrol Keyboard & Sentuh untuk Arkade
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft' || e.key === 'a') moveLeft = true;
-            if (e.key === 'ArrowRight' || e.key === 'd') moveRight = true;
-        });
-        window.addEventListener('keyup', (e) => {
-            if (e.key === 'ArrowLeft' || e.key === 'a') moveLeft = false;
-            if (e.key === 'ArrowRight' || e.key === 'd') moveRight = false;
-        });
-
-        // Kontrol Sentuh Langsung pada Kanvas
-        arcadeCanvas.addEventListener('touchmove', (e) => {
-            if (!arcadeRunning) return;
-            e.preventDefault();
-            const rect = arcadeCanvas.getBoundingClientRect();
-            const touchX = e.touches[0].clientX - rect.left;
-            playerX = Math.min(0.92, Math.max(0.08, touchX / rect.width));
-        }, { passive: false });
-
-        // Tombol Kiri & Kanan di layar
-        const btnLeft = document.getElementById('btnLeftArcade');
-        const btnRight = document.getElementById('btnRightArcade');
-        btnLeft.addEventListener('mousedown', () => moveLeft = true);
-        btnLeft.addEventListener('mouseup', () => moveLeft = false);
-        btnLeft.addEventListener('touchstart', (e) => { e.preventDefault(); moveLeft = true; });
-        btnLeft.addEventListener('touchend', () => moveLeft = false);
-
-        btnRight.addEventListener('mousedown', () => moveRight = true);
-        btnRight.addEventListener('mouseup', () => moveRight = false);
-        btnRight.addEventListener('touchstart', (e) => { e.preventDefault(); moveRight = true; });
-        btnRight.addEventListener('touchend', () => moveRight = false);
-
-        // --- INISIALISASI SAAT HALAMAN DIMUAT ---
-        window.onload = function() {
-            renderFanart();
-            renderFanfic();
-            renderContributors();
-            initMemoryGame();
-            initQuizGame();
-            resizeArcadeCanvas();
-        };
-    </script>
+      }
+
+      animId = requestAnimationFrame(gameLoop);
+    }
+
+    // INIT ALL
+    renderFanarts();
+    renderFanfics();
+    renderMerch();
+    renderContributors();
+    initMemoryGame();
+    renderQuiz();
+  </script>
 </body>
 </html>
